@@ -1,11 +1,12 @@
-
-import './App.css';
+import { Box, Text } from "@chakra-ui/react";
+import "./App.css";
+import { Navbar } from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <div className="App">
-     <h1>hello</h1>
-    </div>
+    <Box className="font-face-pt ">
+      <Navbar />
+    </Box>
   );
 }
 
