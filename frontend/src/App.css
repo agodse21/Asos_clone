@@ -6,6 +6,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+.font-face-pt {
+  font-family: "FuturaPTCondBook";
+ }
+ 
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
