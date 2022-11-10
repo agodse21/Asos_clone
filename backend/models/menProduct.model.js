@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const womenproductSchema = mongoose.Schema({
+const menproductSchema = mongoose.Schema({
   name: { type: String, required: true },
   price: { type: String, required: true },
   mainImage: { type: String },
@@ -23,5 +23,5 @@ const womenproductSchema = mongoose.Schema({
     type: String,
   },
 });
-const womenproductModel = mongoose.model("womenproducts", womenproductSchema);
-module.exports = { womenproductModel };
+const menproductModel = mongoose.model("menproducts", menproductSchema);
+module.exports = { menproductModel };
