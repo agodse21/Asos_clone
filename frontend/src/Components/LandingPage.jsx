@@ -1,35 +1,53 @@
 import React from "react";
 
+import offer from "../Images/offer.png"
+import selfcare from "../Images/selfcare.png"
+import gofor from "../Images/gofor.png"
+import label from "../Images/label.png"
+import inhouse from "../Images/inhouse.png"
+import treat from "../Images/treat.png"
+import collussion from "../Images/collussion.png"
+import monkl from "../Brands/monkl.png"
+import never from "../Brands/never.png"
+import collusionlogo from "../Brands/collusionlogo.png"
+import reclaimed from "../Brands/reclaimed.png"
+import topshop from "../Brands/topshop.png"
+import weekday from "../Brands/weekday.png"
+import getgift from "../Brands/getgift.png"
+
+
+
+
 const LandingPage = () => {
   return (
     <div>
       <div style={{ width: "95%","margin":"auto"}}>
-        <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/2022/11-nov/singles-day---click-frenzy/artworked-promos/high-awareness-markets/30/row/2022_singles-day_high-awareness_30-homepage-promo-hero-desktop_ww_row_1258x600.jpg" alt=""/>
+     <img src={offer}alt="offer"/>
       </div>
       <br />
       <br />
       {/* 2nd div */}
       <div style={{ width: "95%", margin: "auto" ,"display":"flex","justifyContent":"space-between"}}>
         <div style={{ width: "24%"}}>
-          <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/2022/11-nov/singles-day---click-frenzy/prime/moments-features-with-borders/ww/ww---self-care.jpg" alt=""/>
+          <img src={selfcare} alt="selfcare"/>
           <h3 style={{"fontWeight":"bold","fontSize":"18px"}}>SELF CARE MOMENT </h3>
           <p>It's treats Yourself Time</p>
         </div>
 
         <div style={{ width: "24%"}}>
-          <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/2022/11-nov/singles-day---click-frenzy/prime/moments-features-with-borders/ww/ww---label-love.jpg" alt=""/>
+        <img src={label} alt="label"/>
           <h3 style={{"fontWeight":"bold","fontSize":"18px"}}> LABEL LOVE </h3>
           <p>It's treats Yourself Time</p>
         </div>
 
         <div style={{ width: "24%"}}>
-          <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/2022/11-nov/singles-day---click-frenzy/prime/moments-features-with-borders/ww/ww---in-house-brands.jpg" alt=""/>
+          <img src={inhouse} alt="inhouse"/>
           <h3 style={{"fontWeight":"bold","fontSize":"18px"}}> IN-HOUSE BRNDS</h3>
           <p>It's treats Yourself Time</p>
         </div>
 
         <div style={{ width: "24%"}}>
-          <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/2022/11-nov/singles-day---click-frenzy/prime/moments-features-with-borders/ww/ww---go-for-glam.jpg" alt=""/>
+          <img src={gofor} alt="gofor"/>
           <h3 style={{"fontWeight":"bold","fontSize":"18px"}}> GO FOR GLAM </h3>
           <p>It's treats Yourself Time</p>
         </div>
@@ -49,7 +67,7 @@ const LandingPage = () => {
       {/* after offer page 2 div */}
       <div style={{ width: "95%", margin: "auto" ,"display":"flex","justifyContent":"space-evenly"}}>
         <div style={{ width: "40%"}}>
-          <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/2022/11-nov/singles-day---click-frenzy/prime/moments-features-with-borders/ww/ww--treat-yoself-brands.jpg"alt="" />
+          <img src={treat}alt="treat"/>
           <h3 style={{"fontWeight":"bold","fontSize":"30px"}}>TREAT YO,SELF BRANDS </h3>
           <p>Cos deserve the best</p>
           <br />
@@ -58,7 +76,7 @@ const LandingPage = () => {
         </div>
 
         <div style={{ width: "40%"}}>
-          <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/2022/11-nov/singles-day---click-frenzy/prime/moments-features-with-borders/ww/ww---collusion.jpg" alt=""/>
+          <img src={collussion} alt="collussion"/>
           <h3 style={{"fontWeight":"bold","fontSize":"30px"}}> COLLUSIONS </h3>
           <p>POV:the club in 2062</p>
           <br />
@@ -71,7 +89,7 @@ const LandingPage = () => {
 <br />
 {/* get gifting div */}
 <div style={{"width":"100%","height":"115px"}}>
-<img src=" https://content.asos-media.com/-/media/hubs/gifting/2022/01_jpeg/gifting/dt_live-text-banner_2880x600.jpg" alt=""/>
+  <img src={getgift} alt="getgift"/>
 </div>
 <br />
 <br />
@@ -80,23 +98,19 @@ const LandingPage = () => {
 
 {/* trending brands */}
 <div style={{"display":"flex","margin":"auto","justifyContent":"space-evenly"}}> 
-<img style={{"width":"16%"}} src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/monkl-hp-logos-256x256.jpg" alt="" />
-<img style={{"width":"16%"}} src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/never-fully-dressed-hp-logos-256x256.png" alt="" />
-<img style={{"width":"16%"}} src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/1x12x---test.png" alt="" />
-<img style={{"width":"16%"}} src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/reclaimed-vintage-hp-logos-256x256.jpg" alt="" />
-<img style={{"width":"16%"}} src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/collusion-hp-logos-256x256.jpg" alt="" />
-<img style={{"width":"16%"}} src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/weekday-hp-logos-256x256.jpg" alt="" />
+<img style={{"width":"16%"}}  src={monkl} alt="monkl"/>
+<img style={{"width":"16%"}} src={never} alt="never"/>
+<img style={{"width":"16%"}} src={topshop} alt="topshop"/>
+<img style={{"width":"16%"}} src={reclaimed} alt="reclaimed"/>
+<img style={{"width":"16%"}} src={collusionlogo} alt="collusionlogo"/>
+<img style={{"width":"16%"}} src={weekday} alt="weekday"/>
 </div>    
 <br />
 <br />
 <hr />
 <br />
 <br />
-{/* social media img */}
 
-<div>
-    
-</div>
     </div>
   );
 };
