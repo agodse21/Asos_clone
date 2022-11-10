@@ -11,6 +11,8 @@ import {GrContact} from "react-icons/gr"
 import { ProductPageNav } from "./ProductPageNav";
 import styles from "./nav.module.css";
 import SubNav from "./subMenu";
+import MenSubNav from "./MenSubNav";
+import { BottomBanner } from "./BottomBanner";
 export const MiddleNav = () => {
   return (
     
@@ -80,9 +82,10 @@ export const MiddleNav = () => {
   <TabPanels>
     <TabPanel p="0"  w="100%">
     <SubNav />
+
     </TabPanel>
-    <TabPanel>
-      <p>two!</p>
+    <TabPanel p="0"  w="100%">
+    <MenSubNav / >
     </TabPanel>
   </TabPanels>
 </Tabs>

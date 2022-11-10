@@ -12,12 +12,14 @@
     padding: 0 30px;
     /* height: 100%; */
     margin:  auto;
+    
     /* display: flex; */
     /* align-items: center; */
   }
   .wrapper .navLink {
     display: inline-flex;
     /* gap: 30px; */
+    
 
   }
   .navLink>li:nth-child(1) a{
@@ -48,6 +50,7 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
+    
   }
   .navLink li:hover .megaBox,
   .navLink li:hover .dropMenu {
@@ -55,6 +58,7 @@
     opacity: 1;
     visibility: visible;
     z-index: 999;
+    background-color: white;
     padding: 20px;
     transition: all 0.3s ease-in-out;
   }
@@ -79,6 +83,7 @@
   .megaBox .content {
     background: #fdfdfd;
     display: flex;
+    /* margin: 0; */
     width: 100%;
   gap: 4rem;
   }
