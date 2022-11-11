@@ -10,7 +10,7 @@ export const Navbar = () => {
     <Box>
       <TopBanner />
       <MiddleNav />
- <BottomBanner />
+      <BottomBanner />
     </Box>
   );
 };
