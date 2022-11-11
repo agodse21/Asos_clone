@@ -17,11 +17,26 @@ import React, { useState } from "react";
 import { DiApple } from "react-icons/di";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { SignupReq } from "../Redux/Auth/action";
 
 export default function Signup() {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [dob, setDob] = useState("");
+  const [interest, setInterest] = useState("Womenswear");
+  const dispatch = useDispatch()
+
+  function sendSignupRequest() {
+    dispatch(
+    SignupReq({ email, password, firstname, lastname, dob, interest })
+  )
+}
+
   return (
     <Box style={{ fontFamily: "sans-serif" }}>
       <Text textAlign={"center"} fontSize={"20px"} mt={"30px"} fontWeight={600}>
@@ -92,7 +107,12 @@ export default function Signup() {
         >
           EMAIL ADDRESS :
         </FormLabel>
-        <Input size="lg" type="email" />
+        <Input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          size="lg"
+          type="email"
+        />
         <FormHelperText>We'll send your order confirmation here</FormHelperText>
         <FormLabel
           color={"gray"}
@@ -102,7 +122,12 @@ export default function Signup() {
         >
           FIRST NAME :
         </FormLabel>
-        <Input size="lg" type="text" />
+        <Input
+          value={firstname}
+          onChange={(e) => setFirstName(e.target.value)}
+          size="lg"
+          type="text"
+        />
         <FormLabel
           color={"gray"}
           fontSize={"14px"}
@@ -111,7 +136,12 @@ export default function Signup() {
         >
           LAST NAME :
         </FormLabel>
-        <Input size="lg" type="text" />
+        <Input
+          value={lastname}
+          onChange={(e) => setLastName(e.target.value)}
+          size="lg"
+          type="text"
+        />
         <FormLabel
           color={"gray"}
           fontSize={"14px"}
@@ -145,7 +175,12 @@ export default function Signup() {
         >
           DATE OF BIRTH :
         </FormLabel>
-        <Input size="lg" type="date" />
+        <Input
+          value={dob}
+          onChange={(e) => setDob(e.target.value)}
+          size="lg"
+          type="date"
+        />
         <FormHelperText>You need to be 16 or over to use ASOS</FormHelperText>
         <FormLabel
           color={"gray"}
@@ -156,19 +191,28 @@ export default function Signup() {
         >
           MOSTLY INTERESTED IN :
         </FormLabel>
-        <RadioGroup defaultValue="2">
+        <RadioGroup
+          value={interest}
+          onChange={(e) => setInterest(e)}
+          defaultValue="1"
+        >
           <Stack spacing={5} direction="row">
-            <Radio size='lg' mr={'50px'} colorScheme="blue" value="1">
-            Womenswear
+            <Radio size="lg" mr={"50px"} colorScheme="blue" value="Womenswear">
+              Womenswear
             </Radio>
-            <Radio  size='lg' colorScheme="blue" value="2">
-            Menswear
+            <Radio size="lg" colorScheme="blue" value="Menswear">
+              Menswear
             </Radio>
           </Stack>
         </RadioGroup>
       </FormControl>
-      <Box w={"65%"} margin={"auto"} mt={'50px'} mb={'20px'}>
-        <Button w={"100%"} bg={'#2d2d2d'} color={'white'}>
+      <Box w={"65%"} margin={"auto"} mt={"50px"} mb={"20px"}>
+        <Button
+          onClick={sendSignupRequest}
+          w={"100%"}
+          bg={"#2d2d2d"}
+          color={"white"}
+        >
           JOIN ASOS
         </Button>
       </Box>
