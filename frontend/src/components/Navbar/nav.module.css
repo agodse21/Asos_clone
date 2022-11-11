@@ -83,7 +83,7 @@
   .megaBox .content {
     background: #fdfdfd;
     display: flex;
-    /* margin: 0; */
+    /* margin-top: -35px; */
     width: 100%;
   gap: 4rem;
   }
@@ -149,17 +149,7 @@
      width: 90%;
      position: relative;
   }
-  .text-block {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width:90%;
-    background-color: black;
-    color: white;
-    opacity:10%;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+ 
   .lPImage >img:hover{
     border: 1px solid #0770cf;
   }
@@ -183,6 +173,10 @@
   .row .shopList>div>img{
     width: 23%;
     border-radius: 50% ;
+  }
+  .Link:hover{
+    color: black;
+    
   }
   .row .shopList>div>img:hover{
     border: 1px solid #0770cf;
