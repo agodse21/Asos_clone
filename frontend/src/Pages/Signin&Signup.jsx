@@ -10,14 +10,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
 import Signin from "../components/Signin";
 import Signup from "../components/Signup";
+import { useNavigate } from "react-router-dom"
 
 export default function SigninandSignup() {
-
-  console.log(window.location.pathname)
+  const navigate = useNavigate()
   return (
     <Box bg={"#efefef"}>
       <Box h={"80px"}></Box>
@@ -30,10 +28,10 @@ export default function SigninandSignup() {
       <Box w={"650px"} margin={"auto"} bg={"white"}>
         <Tabs defaultIndex={window.location.pathname === '/signin' ? 1 : 0}>
           <TabList w={"100%"} h={"100px"}>
-            <Tab fontSize={"17px"} w={"50%"}>
+            <Tab onClick={()=> navigate('/signup')} fontSize={"17px"} w={"50%"}>
               JOIN
             </Tab>
-            <Tab fontSize={"17px"} w={"50%"}>
+            <Tab onClick={()=> navigate('/signin')} fontSize={"17px"} w={"50%"}>
               SIGN IN
             </Tab>
           </TabList>
