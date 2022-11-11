@@ -1,19 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import './fonts/FuturaPTCondBook.otf'
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from "react-router-dom";
-import {ChakraProvider} from '@chakra-ui/react';
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import "./fonts/FuturaPTCondBook.otf";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <ChakraProvider>
- <BrowserRouter>
-    <App />
+  <ChakraProvider>
+    <BrowserRouter>
+      <App />
     </BrowserRouter>
-    </ChakraProvider>
-
+  </ChakraProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

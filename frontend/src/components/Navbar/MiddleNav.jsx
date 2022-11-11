@@ -49,7 +49,7 @@ export const MiddleNav = () => {
     <PopoverArrow />
     <PopoverCloseButton />
     <PopoverHeader bgColor={"#ddd"}>
-        <Link to="/login" >Sign In</Link> 
+        <Link to="/signin">Sign In</Link>
            |   <Link to="/signup">Join</Link>
     </PopoverHeader>
     <PopoverBody>

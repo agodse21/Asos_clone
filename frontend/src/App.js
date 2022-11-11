@@ -1,11 +1,11 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, } from "@chakra-ui/react";
 import "./App.css";
-import { Navbar } from "./components/Navbar/Navbar";
+import All_Route from "./Pages/All_Route";
 
 function App() {
   return (
     <Box className="font-face-pt ">
-      <Navbar />
+     <All_Route/>
     </Box>
   );
 }
