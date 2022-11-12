@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading,Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text } from "@chakra-ui/react";
 import React from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
@@ -8,11 +8,11 @@ import {HiOutlineUser ,HiOutlineHeart} from "react-icons/hi";
 import {IoBagOutline} from "react-icons/io5";
 import {FiShoppingBag} from "react-icons/fi";
 import {GrContact} from "react-icons/gr"
-import { ProductPageNav } from "./ProductPageNav";
-import styles from "./nav.module.css";
+// import { ProductPageNav } from "./ProductPageNav";
+// import styles from "./nav.module.css";
 import SubNav from "./subMenu";
 import MenSubNav from "./MenSubNav";
-import { BottomBanner } from "./BottomBanner";
+// import { BottomBanner } from "./BottomBanner";
 export const MiddleNav = () => {
   return (
     
@@ -86,6 +86,7 @@ export const MiddleNav = () => {
     </TabPanel>
     <TabPanel p="0"  w="100%">
     <MenSubNav / >
+      
     </TabPanel>
   </TabPanels>
 </Tabs>
