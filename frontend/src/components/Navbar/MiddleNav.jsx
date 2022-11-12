@@ -1,5 +1,4 @@
 
-import { Box, Button, Flex, Heading,Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text } from "@chakra-ui/react";
 import {
   Box,
   Button,
@@ -28,18 +27,15 @@ import {FiShoppingBag} from "react-icons/fi";
 import {GrContact} from "react-icons/gr"
 // import { ProductPageNav } from "./ProductPageNav";
 // import styles from "./nav.module.css";
-import SubNav from "./subMenu";
+import SubNav from "./WomensubMenu";
 import MenSubNav from "./MenSubNav";
 // import { BottomBanner } from "./BottomBanner";
 
-import { HiOutlineUser, HiOutlineHeart } from "react-icons/hi";
-import { IoBagOutline } from "react-icons/io5";
-import { FiShoppingBag } from "react-icons/fi";
-import { GrContact } from "react-icons/gr";
+
 import { ProductPageNav } from "./ProductPageNav";
 import styles from "./nav.module.css";
-import SubNav from "./WomensubMenu";
-import MenSubNav from "./MenSubNav";
+
+
 import { BottomBanner } from "./BottomBanner";
 import { useDispatch } from "react-redux";
 import { SwitchTab } from "../../Redux/App/action";
@@ -172,19 +168,7 @@ export const MiddleNav = () => {
   </TabPanels>
 </Tabs>
 
-      </TabList>
-      <TabPanels>
-        <TabPanel p="0" w="100%">
-          <SubNav />
-          <BottomBanner />
-        </TabPanel>
-        <TabPanel p="0" w="100%">
-        {/* <SubNav /> */}
-          <MenSubNav />
-          <BottomBanner />
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
+     
 
   );
 };
