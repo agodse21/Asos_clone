@@ -1,4 +1,3 @@
-
 import {
   Box,
   Button,
@@ -14,28 +13,19 @@ import {
   PopoverTrigger,
   Text,
 } from "@chakra-ui/react";
-
 import React from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { RepeatClockIcon } from "@chakra-ui/icons";
 import { SearchInput } from "./SearchInput";
-
-import {HiOutlineUser ,HiOutlineHeart} from "react-icons/hi";
-import {IoBagOutline} from "react-icons/io5";
-import {FiShoppingBag} from "react-icons/fi";
-import {GrContact} from "react-icons/gr"
-// import { ProductPageNav } from "./ProductPageNav";
-// import styles from "./nav.module.css";
-import SubNav from "./WomensubMenu";
-import MenSubNav from "./MenSubNav";
-// import { BottomBanner } from "./BottomBanner";
-
-
+import { HiOutlineUser, HiOutlineHeart } from "react-icons/hi";
+import { IoBagOutline } from "react-icons/io5";
+import { FiShoppingBag } from "react-icons/fi";
+import { GrContact } from "react-icons/gr";
 import { ProductPageNav } from "./ProductPageNav";
 import styles from "./nav.module.css";
-
-
+import SubNav from "./WomensubMenu";
+import MenSubNav from "./MenSubNav";
 import { BottomBanner } from "./BottomBanner";
 import { useDispatch } from "react-redux";
 import { SwitchTab } from "../../Redux/App/action";
@@ -168,7 +158,6 @@ export const MiddleNav = () => {
   </TabPanels>
 </Tabs>
 
-     
 
   );
 };
