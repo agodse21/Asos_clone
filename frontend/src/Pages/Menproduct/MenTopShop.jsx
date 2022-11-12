@@ -28,7 +28,7 @@ export const MenTopShop = () => {
 console.log(products)
   useEffect(() => {
     // = (type,page,limt)
-    dispatch(loadProduct("men","jeans"));
+    dispatch(loadProduct("men","Tshirt"));
     // dispatch( loadProductWithQuery("women",7,12));
   }, [dispatch]);
 

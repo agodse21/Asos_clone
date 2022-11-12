@@ -48,7 +48,7 @@ console.log(e.target.value)
           </BreadcrumbItem>
 
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Women</BreadcrumbLink>
+            <BreadcrumbLink href="#">men</BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
@@ -59,7 +59,7 @@ console.log(e.target.value)
       <hr />
       <Box w="85%" m="auto" mt={5}>
         <Center>
-          <Heading size={"md"}>Women's Sale</Heading>
+          <Heading size={"md"}>Men's Sale</Heading>
         </Center>
         <VStack w="80%" m={"auto"} mt={4}>
           <Collapse startingHeight={20} in={show}>
