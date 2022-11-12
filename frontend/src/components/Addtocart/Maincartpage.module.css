@@ -1,0 +1,22 @@
+.maincartpage{
+    display: flex;
+    flex-wrap:wrap ;
+    width: 70%;
+    margin: auto;
+    gap:30px;
+    border:1px solid orange;
+
+
+   
+}
+@media screen  and(max-width:1000px){
+    .maincartpage{
+        width: 100%;
+    }
+}
+@media  screen and (max-width:900px){
+    .maincartpage{
+        width: 100%;
+        margin:0;
+    }
+}

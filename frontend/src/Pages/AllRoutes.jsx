@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Maincartpage from "../components/Addtocart/Maincartpage";
 import { Navbar } from "../components/Navbar/Navbar";
 
 import Footer from "./Footer";
@@ -87,11 +88,6 @@ export const AllRoutes = () => {
         <Route path="/menaccessories" element={<MenAccessoris />} />
         <Route path="/menautumn" element={<MenAutumn />} />
         <Route path="/mengifting" element={<MenGifting />} />
-
-        
-
-        <Route path="/productdetails/:id" element={<SinglePageProduct/>}/>
-
       </Routes>
 
       <Footer/>
