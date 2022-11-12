@@ -1,5 +1,5 @@
 
-import { Box, Button, Flex, Heading,Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text } from "@chakra-ui/react";
+// import { Box, Button, Flex, Heading,Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text } from "@chakra-ui/react";
 import {
   Box,
   Button,
@@ -22,15 +22,6 @@ import { Link } from "react-router-dom";
 import { RepeatClockIcon } from "@chakra-ui/icons";
 import { SearchInput } from "./SearchInput";
 
-import {HiOutlineUser ,HiOutlineHeart} from "react-icons/hi";
-import {IoBagOutline} from "react-icons/io5";
-import {FiShoppingBag} from "react-icons/fi";
-import {GrContact} from "react-icons/gr"
-// import { ProductPageNav } from "./ProductPageNav";
-// import styles from "./nav.module.css";
-import SubNav from "./subMenu";
-import MenSubNav from "./MenSubNav";
-// import { BottomBanner } from "./BottomBanner";
 
 import { HiOutlineUser, HiOutlineHeart } from "react-icons/hi";
 import { IoBagOutline } from "react-icons/io5";
@@ -171,20 +162,6 @@ export const MiddleNav = () => {
     </TabPanel>
   </TabPanels>
 </Tabs>
-
-      </TabList>
-      <TabPanels>
-        <TabPanel p="0" w="100%">
-          <SubNav />
-          <BottomBanner />
-        </TabPanel>
-        <TabPanel p="0" w="100%">
-        {/* <SubNav /> */}
-          <MenSubNav />
-          <BottomBanner />
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
 
   );
 };

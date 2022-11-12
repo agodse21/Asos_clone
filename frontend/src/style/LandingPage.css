@@ -8,6 +8,7 @@
    width: 95%;
     margin: auto ;
     display:flex;
+    gap: 2rem;
     justify-content: space-between;
 }
 .seconddiv > div{
@@ -56,10 +57,10 @@ padding: 10px;
     margin:auto;
     justify-content:space-evenly
 }
-.bimg
+/* .bimg
 {
     width: 16%;
-}
+} */
 /* media queries */
 
 @media all and (max-width: 600px) {
