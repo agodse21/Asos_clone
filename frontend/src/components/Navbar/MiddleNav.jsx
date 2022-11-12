@@ -27,7 +27,13 @@ import styles from "./nav.module.css";
 import SubNav from "./WomensubMenu";
 import MenSubNav from "./MenSubNav";
 import { BottomBanner } from "./BottomBanner";
+import { useDispatch } from "react-redux";
+import { SwitchTab } from "../../Redux/App/action";
 export const MiddleNav = () => {
+  const dispatch=useDispatch();
+  const HandleTab=(type)=>{
+    dispatch(SwitchTab(type))
+  }
   return (
     <Tabs variant="unstyled">
       <TabList>
@@ -40,7 +46,7 @@ export const MiddleNav = () => {
             m={"auto"}
           >
             <Box mr="20px" fontWeight={"bold"}>
-              <Link to="/">
+              <Link to="/womenhome">
                 <Heading size={"xl"}>Fashion World</Heading>
               </Link>
             </Box>
@@ -50,8 +56,9 @@ export const MiddleNav = () => {
               w="8%"
               h="100%"
               fontWeight={"bold"}
+             
             >
-                <Link to={"/women"}> WOMEN</Link>
+                <Link to={"/womenhome"}> WOMEN</Link>
             </Tab>
 
         <Tab
@@ -61,7 +68,7 @@ export const MiddleNav = () => {
               h="100%"
               fontWeight={"bold"}
             >
-             <Link to={"/men"}> MEN</Link>
+             <Link to={"/menhome"}> MEN</Link>
             </Tab>
           
             <SearchInput />
@@ -142,8 +149,8 @@ export const MiddleNav = () => {
           <BottomBanner />
         </TabPanel>
         <TabPanel p="0" w="100%">
-        <SubNav />
-          {/* <MenSubNav /> */}
+        {/* <SubNav /> */}
+          <MenSubNav />
           <BottomBanner />
         </TabPanel>
       </TabPanels>

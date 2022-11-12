@@ -21,12 +21,14 @@ const MenSubNav = () => {
               mr="10px"
               h="49px"
             >
-              <Text
+              <Link className={styles.Link} to={"/mensale"}> <Text
                 transform={"skew(10deg)"}
                 _hover={{ transform: "skew(0deg)" }}
               >
                 Sale
               </Text>
+              </Link>
+
             </Flex>
             <Box className={styles.megaBox}>
               <Box className={styles.content}>
@@ -173,7 +175,9 @@ const MenSubNav = () => {
               justifyContent={"center"}
               h="49px"
             >
+              <Link className={styles.Link} to="/mennewin">
               <Text>New in</Text>
+              </Link>
             </Flex>
 
             <Box className={styles.megaBox}>
