@@ -30,7 +30,7 @@ import { BottomBanner } from "./BottomBanner";
 export const MiddleNav = () => {
   return (
     <Tabs variant="unstyled">
-      <TabList>
+       <TabList>
         <Box h="60px" w="100%" bgColor={"#2d2d2d"}>
           <Flex
             color={"white"}
@@ -151,7 +151,8 @@ export const MiddleNav = () => {
         <GrContact size={25}  /><Text ml={2}> Contact Preference</Text>
         </Flex>
     </PopoverBody>
-  </PopoverContent>
+                </PopoverContent>
+                
 </Popover>
 
                 <Link to="/wishlist">
@@ -173,10 +174,10 @@ export const MiddleNav = () => {
         </TabPanel>
         <TabPanel p="0" w="100%">
         <SubNav />
-          {/* <MenSubNav /> */}
-          <BottomBanner />
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
+          <MenSubNav /> 
+          <BottomBanner /> 
+         </TabPanel> 
+       </TabPanels> 
+    </Tabs> 
   );
 };
