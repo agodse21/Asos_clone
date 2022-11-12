@@ -32,20 +32,20 @@ const SinglePageProduct = () => {
           console.log(cart);
     return (
         // main box
-        <Box className="Box" width={"60%"} height={"600px"} border={"1px solid red"} margin={"auto"} marginTop={"5px"} padding={"10px"}> 
+        <Box className="Box" width={"60%"} height={"600px"}  margin={"auto"} marginTop={"5px"} padding={"10px"}> 
           
           
-          <HStack className="Box" width={"100%"} height={"100%"}  marginLeft={"5px"} border={"1px solid green"}>
+          <HStack className="Box" width={"100%"} height={"100%"}  marginLeft={"5px"} >
            
 
-          <VStack width={"10%"}  marginLeft={"5px"} border={"1px solid green"} height={"100%"}>
+          <VStack width={"10%"}  marginLeft={"5px"}  height={"100%"}>
             <Box className="Box" marginLeft={"5px"} marginTop={"10px"}>
                  <Box className="Box"marginLeft={"15px"} marginTop={"20px"}>
                  <Image
                     width={"80%"}
                     height={"40%"}
                     src={singleProduct.backImage}
-                    border={"1px solid red"}
+                    
                   />
                      {/* backimage */}
                  </Box>
@@ -54,7 +54,7 @@ const SinglePageProduct = () => {
                      width={"80%"}
                      height={"40%"}
                      src={singleProduct.sideImage}
-                     border={"1px solid red"} 
+                     
                     />
                     {/* sideImage */}
                  </Box>
@@ -63,7 +63,7 @@ const SinglePageProduct = () => {
                      width={"80%"}
                      height={"40%"}
                      src={singleProduct.sideImage}
-                     border={"1px solid red"} 
+                      
                     />
                   
                  </Box>
@@ -73,13 +73,13 @@ const SinglePageProduct = () => {
                      width={"80%"}
                      height={"40%"}
                      src={singleProduct.backImage}
-                     border={"1px solid red"} 
+                     
                     />
                   
                  </Box>
             </Box>
             </VStack>
-                <Box className="Box" border={"1px solid green"} width={"48%"} height={"100%"}>
+                <Box className="Box"  width={"48%"} height={"100%"}>
                     
                     <Box className="Box" width={"98%"} height={"100%"}>
                     <Image 
@@ -93,7 +93,7 @@ const SinglePageProduct = () => {
                 </Box>
             
                 {/* //Description */}
-                 <Box className="Box" width={"38%"} height={"100%"} border={"1px solid red"} marginLeft={"10px"}>
+                 <Box className="Box" width={"38%"} height={"100%"}  marginLeft={"10px"}>
                   
                     <Box className="Box" marginLeft={"10px"} >
                         <Text >{singleProduct.name}</Text>
@@ -168,9 +168,9 @@ const SinglePageProduct = () => {
             </HStack>
             {/* product Details  */}
             <Collapse startingHeight={20} in={show}>
-            <Box className="Box" width={"100%"} height={"400px"} border={"1px solid red"} margin={"auto"} marginTop={"15px"} padding={"10px"}>
-                 <HStack className="Box" width={"100%"} height={"100%"}  marginLeft={"5px"} border={"1px solid green"}>
-                    <Box width={"30%"}  marginLeft={"5px"} border={"1px solid green"} height={"100%"}>
+            <Box className="Box" width={"100%"} height={"400px"}  margin={"auto"} marginTop={"15px"} padding={"10px"}>
+                 <HStack className="Box" width={"100%"} height={"100%"}  marginLeft={"5px"} >
+                    <Box width={"30%"}  marginLeft={"5px"} height={"100%"}>
                         <Box textAlign={"start"} fontWeight={"bold"}  marginTop={"80px"}>PRODUCT DETAILS
                      
                         </Box>
@@ -178,15 +178,15 @@ const SinglePageProduct = () => {
                           {singleProduct.productDetails}</Text>
                     </Box>
 
-                    <Box className="Box" width={"35%"} height={"100%"} border={"1px solid red"} margin={"auto"} marginTop={"15px"} padding={"10px"}>
+                    <Box className="Box" width={"35%"} height={"100%"}  margin={"auto"} marginTop={"15px"} padding={"10px"}>
                         <VStack className="Box" marginTop={"5px"} >
-                            <Box className="Box" height={"100px"} width={"100%"} border={"1px solid green"} marginTop={"5px"} >
+                            <Box className="Box" height={"100px"} width={"100%"}  marginTop={"5px"} >
                                 <Box className="Box" textAlign={"start"} fontWeight={"bold"} marginTop={"5px"} >PRODUCT CODE
                                  
                                 </Box>
                                 <Text>123274070</Text>
                             </Box>
-                            <Box className="Box" height={"100%"} width={"100%"} border={"1px solid green"} marginTop={"5px"}>
+                            <Box className="Box" height={"100%"} width={"100%"}  marginTop={"5px"}>
                                 <Box className="Box" textAlign={"start"} fontWeight={"bold"} marginTop={"5px"}>BRAND
                                
                                 </Box>
@@ -196,15 +196,15 @@ const SinglePageProduct = () => {
                         </VStack>
                     </Box>
 
-                    <Box className="Box" width={"35%"} height={"100%"} border={"1px solid red"} margin={"auto"} marginTop={"15px"} padding={"10px"}>
+                    <Box className="Box" width={"35%"} height={"100%"}  margin={"auto"} marginTop={"15px"} padding={"10px"}>
                         <VStack className="Box" marginTop={"5px"}>
-                            <Box className="Box" height={"180px"} width={"100%"} border={"1px solid green"} marginTop={"5px"}>
+                            <Box className="Box" height={"180px"} width={"100%"}  marginTop={"5px"}>
                                 <Box className="Box" textAlign={"start"} fontWeight={"bold"} marginTop={"5px"} >LOOK AFTER ME
                                 
                                  </Box>
                                  <Text>{singleProduct.Lookafterme}</Text>
                             </Box>
-                            <Box className="Box" height={"150px"} width={"100%"} border={"1px solid green"} marginTop={"5px"}>
+                            <Box className="Box" height={"150px"} width={"100%"}  marginTop={"5px"}>
                                 <Box className="Box" textAlign={"start"} fontWeight={"bold"} marginTop={"5px"}>ABOUT ME
                                 </Box>
                                 <Text>{singleProduct.aboutme}</Text>
@@ -219,7 +219,7 @@ const SinglePageProduct = () => {
         <Button size='sm' width={"15%"}  marginLeft={"25rem"} onClick={handleToggle} mt='1rem'>
         Show {show ? 'Less' : 'More'}
       </Button>
-        <hr/>
+        
                    
         </Box>
     )
