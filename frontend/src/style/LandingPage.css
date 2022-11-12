@@ -1,0 +1,73 @@
+.maindiv
+{
+ width: 95%;
+ margin:auto
+}
+.seconddiv
+{
+   width: 95%;
+    margin: auto ;
+    display:flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+.seconddiv > div{
+    text-align: center;
+}
+.secondheading
+{
+   font-weight:bold;
+   font-size:18px
+}
+.thirdmaindiv
+{
+   width:100%;
+   height:115px;
+   background-color:#f799ba;
+   text-align: center;
+}
+.h2
+{
+    font-weight: bold;
+    font-size:28px;
+}
+.h3
+{
+  font-Weight:bold;
+  font-Size:30px;
+}
+
+.btn
+{
+font-size: 25px;
+border: 2px solid black;
+padding: 10px;
+
+}
+.afteroffer
+{
+     width: 95%;
+      margin: auto;
+      display:flex;
+      justify-content:space-evenly
+}
+.brands
+{
+    display:flex;
+    margin:auto;
+    justify-content:space-evenly
+}
+/* .bimg
+{
+    width: 16%;
+} */
+/* media queries */
+
+@media all and (max-width: 600px) {
+
+    .maindiv
+    {
+     width: 90%;
+     margin:auto
+    }
+}

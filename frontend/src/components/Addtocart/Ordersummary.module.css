@@ -1,0 +1,23 @@
+.ordersumbox{
+    width: 400px;
+    top: 0;
+    position: sticky;
+    
+   
+}
+.ordersum_mainbox{
+  
+
+    border: 1px solid rgb(183, 34, 34);
+    
+    
+
+}
+@media screen and (max-width:900px) {
+    .ordersumbox{
+        width: 100%;
+    }
+    .ordersum_mainbox{
+        width: 500px;
+    }
+}

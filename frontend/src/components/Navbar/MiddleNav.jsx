@@ -29,6 +29,7 @@ import MenSubNav from "./MenSubNav";
 import { BottomBanner } from "./BottomBanner";
 import { useDispatch } from "react-redux";
 import { SwitchTab } from "../../Redux/App/action";
+
 export const MiddleNav = () => {
   const dispatch=useDispatch();
   const HandleTab=(type)=>{
@@ -36,7 +37,7 @@ export const MiddleNav = () => {
   }
   return (
     <Tabs variant="unstyled">
-      <TabList>
+       <TabList>
         <Box h="60px" w="100%" bgColor={"#2d2d2d"}>
           <Flex
             color={"white"}
@@ -131,6 +132,7 @@ export const MiddleNav = () => {
                     </PopoverBody>
                   </PopoverContent>
                 </Popover>
+
                 <Link to="/wishlist">
                   <HiOutlineHeart size={30} style={{ marginLeft: "20px" }} />
                 </Link>
@@ -142,6 +144,7 @@ export const MiddleNav = () => {
             </Box>
           </Flex>
         </Box>
+
       </TabList>
       <TabPanels>
         <TabPanel p="0" w="100%">
@@ -149,11 +152,29 @@ export const MiddleNav = () => {
           <BottomBanner />
         </TabPanel>
         <TabPanel p="0" w="100%">
+
         {/* <SubNav /> */}
           <MenSubNav />
           <BottomBanner />
         </TabPanel>
       </TabPanels>
     </Tabs>
+
+
+  
+  </TabList>
+  <TabPanels>
+    <TabPanel p="0"  w="100%">
+    <SubNav />
+
+    </TabPanel>
+    <TabPanel p="0"  w="100%">
+    <MenSubNav / >
+      
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+
+
   );
 };
