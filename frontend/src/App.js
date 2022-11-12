@@ -2,8 +2,9 @@ import { Box} from "@chakra-ui/react";
 import "./App.css";
 
 import { Navbar } from "./components/Navbar/Navbar";
-import Footer from "./components/Footer";
-import WomenPage from "./components/WomenPage";
+import Footer from "./Pages/Footer";
+// import WomenPage from "./Pages/WomenPage";
+ import MenPage from "./Pages/MenPage";
 
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
     <>
     <Box className="font-face-pt ">
       <Navbar />
-      <WomenPage/>
+     {/* <WomenPage/> */}
+     <MenPage/>
      <Footer/>
     </Box>
     </>
