@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Flex, Image, Tag, Text } from '@chakra-ui/react'
+import {  Box,  Flex, Image, Tag, Text } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom';
 import {AiOutlineHeart} from "react-icons/ai"

@@ -7,7 +7,7 @@ export const ProductList = (data) => {
   
   return (
     <Box mt={5} key={data.data._id} >
-       <Link to={`/productdetails/${data.data._id}`}><Tag mt={2} position="absolute" color={"red"} bgColor={"white"} borderRadius={0}>
+       <Link to={`/productdetails/women_${data.data._id}`}><Tag mt={2} position="absolute" color={"red"} bgColor={"white"} borderRadius={0}>
         -{Math.floor(Math.random() * 50)}%
   </Tag>
  
