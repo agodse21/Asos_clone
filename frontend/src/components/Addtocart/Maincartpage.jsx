@@ -8,7 +8,7 @@ import { getaddcartdata } from '../../Redux/Addtocart/action'
 const Maincartpage = () => {
   const dispatch=useDispatch()
   const { data, loading, error } = useSelector((state) => state.CartReducer);
-  
+  console.log("befordta",data)
   useEffect(() => {
     dispatch(getaddcartdata())
   }, [])

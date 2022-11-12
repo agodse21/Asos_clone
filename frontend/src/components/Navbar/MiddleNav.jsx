@@ -29,6 +29,7 @@ import MenSubNav from "./MenSubNav";
 import { BottomBanner } from "./BottomBanner";
 import { useDispatch } from "react-redux";
 import { SwitchTab } from "../../Redux/App/action";
+
 export const MiddleNav = () => {
   const dispatch=useDispatch();
   const HandleTab=(type)=>{
@@ -143,6 +144,7 @@ export const MiddleNav = () => {
             </Box>
           </Flex>
         </Box>
+
       </TabList>
       <TabPanels>
         <TabPanel p="0" w="100%">
@@ -157,6 +159,22 @@ export const MiddleNav = () => {
         </TabPanel>
       </TabPanels>
     </Tabs>
+
+
+  
+  </TabList>
+  <TabPanels>
+    <TabPanel p="0"  w="100%">
+    <SubNav />
+
+    </TabPanel>
+    <TabPanel p="0"  w="100%">
+    <MenSubNav / >
+      
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+
 
   );
 };

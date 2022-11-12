@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Flex, Image, Tag, Text } from '@chakra-ui/react'
+import {  Box,  Flex, Image, Tag, Text } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom';
 import {AiOutlineHeart} from "react-icons/ai"
@@ -7,7 +7,7 @@ export const ProductList = (data) => {
   // console.log("amol",price)/
   return (
     <Box mt={5} key={data.data._id} >
-       <Link to={`/productdetails/${data.data._id}`}>
+       <Link to={`/productdetails/men_${data.data._id}`}>
         <Tag mt={2} position="absolute" color={"red"} bgColor={"white"} borderRadius={0}>
           -{Math.floor(Math.random() * 50)}%
   </Tag>

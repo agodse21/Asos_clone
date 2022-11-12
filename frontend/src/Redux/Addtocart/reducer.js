@@ -70,8 +70,14 @@ export const reducer = (state = initialstate, { type, payload }) => {
       };
     }
     case types.UPDATE_CART_SUCCESS: {
+      const { el, id } = payload;
+      const newdata = state.data.map((e) =>
+        e.product_id == id ? { ...e, item_no: el.item_no, size: el.size } : e
+      );
+      console.log(newdata);
       return {
         ...state,
+        data: newdata,
         loading: false,
       };
     }

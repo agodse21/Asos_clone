@@ -45,8 +45,8 @@ export const updatecartdata = (el, id) => (dispatch) => {
     })
     .then((r) => {
       console.log(r);
-      getaddcartdata();
-      dispatch({ type: types.UPDATE_CART_SUCCESS });
+      // getaddcartdata();
+      dispatch({ type: types.UPDATE_CART_SUCCESS, payload: { el, id } });
     })
     .catch((err) => {
       console.log(err);
