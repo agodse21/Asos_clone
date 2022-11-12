@@ -7,14 +7,14 @@
 }
 .fb,.insta,.snapchat
 {
-    width: 2.5%;
+    width: 25.5%;
     border-radius: 50%;
 }
 
 .visa,.master,.paypal,.american,.electron
 {
-    width:2.5%;
-    height:2%
+    width:25.5%;
+    height:80%
 }
 
 /* end footer */
@@ -26,12 +26,12 @@
     justify-content: center;
 
 }
-.helpdiv
+/* .helpdiv
 {
-        width: 22%;
+        width: 100%;
         line-height: 30px;
         text-align: left;
-}
+} */
 .head
 {
     font-size: 16px;
