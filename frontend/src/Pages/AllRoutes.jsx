@@ -2,7 +2,11 @@ import { Box } from "@chakra-ui/react";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Navbar } from "../components/Navbar/Navbar";
+
 import Footer from "./Footer";
+
+import { CheckOut } from "./CheckOut";
+
 import { MenAccessoris } from "./Menproduct/MenAcceseoris";
 import { MenAutumn } from "./Menproduct/MenAutumn";
 import { MenBrand } from "./Menproduct/MenBrand";
@@ -18,8 +22,12 @@ import { MenShoes } from "./Menproduct/MenShoes";
 import { MenSportWear } from "./Menproduct/MenSportwear";
 import { MenTopShop } from "./Menproduct/MenTopShop";
 import SigninandSignup from "./Signin&Signup";
+
 import WomenPage from "./WomenPage";
 import MenPage from "./MenPage";
+
+import SinglePageProduct from "./SinglePageProduct";
+
 import { WomenAccessoris } from "./womenProduct/WomenAcceseoris";
 import { WomenAutumn } from "./womenProduct/WomenAutumn";
 import { WomenBrand } from "./womenProduct/WomenBrand";
@@ -42,7 +50,12 @@ export const AllRoutes = () => {
       <Routes>
         <Route path="/signup" element={<SigninandSignup />} />
         <Route path="/signin" element={<SigninandSignup />} />
+
         <Route path="/womenhome" element={<WomenPage/>} />
+
+        <Route path="/womenhome" element={<h1>women</h1>} />
+        {/* <Route path="/checkout" element={<CheckOut />} /> */}
+        <Route path="/wishlist" element={<CheckOut />} />
 
         <Route path="/womensale" element={<WomenSale />} />
         <Route path="/womentopshop" element={<WomenTopShop />} />
@@ -74,7 +87,11 @@ export const AllRoutes = () => {
         <Route path="/menaccessories" element={<MenAccessoris />} />
         <Route path="/menautumn" element={<MenAutumn />} />
         <Route path="/mengifting" element={<MenGifting />} />
+
         
+
+        <Route path="/productdetails/:id" element={<SinglePageProduct/>}/>
+
       </Routes>
 
       <Footer/>
