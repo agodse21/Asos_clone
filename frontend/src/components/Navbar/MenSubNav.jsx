@@ -21,12 +21,14 @@ const MenSubNav = () => {
               mr="10px"
               h="49px"
             >
-              <Text
+              <Link className={styles.Link} to={"/mensale"}> <Text
                 transform={"skew(10deg)"}
                 _hover={{ transform: "skew(0deg)" }}
               >
                 Sale
               </Text>
+              </Link>
+
             </Flex>
             <Box className={styles.megaBox}>
               <Box className={styles.content}>
@@ -146,27 +148,16 @@ const MenSubNav = () => {
                   </header>
                   <div className={styles.midNavImg}>
                     <div>
+                      
                       <img
-                        src="https://images.asos-media.com/navigation/ww_sale_curve+plus_3m_1942133?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_sale_plussize_3m_1652684?&$n_240w$"
                         alt=""
                       />
                     </div>
 
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_sale_maternity_3m_1964729?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_sale_petite_3m_1115120250?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_sale_tall_3m_108444108?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_sale_tall_3m_115913938?&$n_240w$"
                         alt=""
                       />
                     </div>
@@ -184,7 +175,9 @@ const MenSubNav = () => {
               justifyContent={"center"}
               h="49px"
             >
+              <Link className={styles.Link} to="/mennewin">
               <Text>New in</Text>
+              </Link>
             </Flex>
 
             <Box className={styles.megaBox}>
@@ -221,45 +214,21 @@ const MenSubNav = () => {
                     </li>
                   </ul>
                 </div>
-                <div className={styles.row}>
-                  <header>Shoap By body fit</header>
-                  <div className={styles.midNavImg}>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_curveplussize_3M_114998343?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_maternity_3M_113467652?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_petite_3M_1999343?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_tall_3M_104174270?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
+                
                 <div className={styles.row}>
                   <header>NEW EDITS</header>
                   <div className={styles.lPImage}>
                     <img
-                      src="https://images.asos-media.com/navigation/WW_Go_for_glam_1650x1884?&$n_320w$"
+                      src="https://images.asos-media.com/products/reclaimed-vintage-inspired-the-94-classic-fit-jeans-in-ecru/200438574-1-ecru?$n_480w$&wid=476&fit=constrain"
                       alt=""
                     />
 
                     <img
-                      src="https://images.asos-media.com/navigation/ww_asos_edition_1650x1884_june?&$n_320w$"
+                      src="https://images.asos-media.com/products/asos-design-muscle-long-sleeve-jersey-roll-neck-t-shirt-in-black/201263628-1-black?$n_480w$&wid=476&fit=constrain"
+                      alt=""
+                    />
+                    <img
+                      src="https://images.asos-media.com/products/asos-design-mini-fisherman-beanie-with-fluffy-knit-in-burnt-orange/200943696-1-yama?$n_480w$&wid=476&fit=constrain"
                       alt=""
                     />
                   </div>
@@ -276,7 +245,9 @@ const MenSubNav = () => {
               justifyContent={"center"} 
               h="49px"
             >
+              <Link className={styles.Link} to="/menclothing">
               <Text>Clothing</Text>
+              </Link>
             </Flex>
             <div className={styles.megaBox}>
               <div className={styles.content}>
@@ -358,27 +329,16 @@ const MenSubNav = () => {
                     SHOP BY BODY FIT
                   </header>
                   <div className={styles.midNavImg}>
+
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_asoscurveandplussize_3M_115454141?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_loungewear_flo_114193941_3m?&$n_240w$"
                         alt=""
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_maternity_3M_117396604?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_petite_3M_111618675?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_tall_3M_116746580?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_top_picks_flo_118709147_2m?&$n_240w$"
                         alt=""
                       />
                     </div>
@@ -390,36 +350,37 @@ const MenSubNav = () => {
                   </header>
                   <div className={styles.shopList}>
                     <div>
+
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_wedding_3M_111178847?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_last_chance_flo_105469462_3m?&$n_240w$"
                         alt=""
                       />
                       <p>Weading</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_bridal_3M_1618123?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_occasionwear_flo_105399272_3m?&$n_240w$"
                         alt=""
                       />
                       <p>Bridal</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_modestfashion_3M_114696164?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_asos_workwear_flo_1947069_3m_B?&$n_240w$"
                         alt=""
                       />
                       <p>Modest fashion</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_clothing_lastchancetobuydress_2M_115452191?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_clothing_shopbyoccasion_partywearglobal_5wl_1310421?&$n_240w$"
                         alt=""
                       />
                       <p>Last chance</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_au_clothing_workwear_3M_109335997?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_clothing_wedding_3m_1911570?&$n_240w$"
                         alt=""
                       />
                       <p>Workwear</p>
@@ -438,7 +399,9 @@ const MenSubNav = () => {
               justifyContent={"center"}
               h="49px"
             >
+              <Link className={styles.Link} to="/mendresses">
               <Text>Dresses</Text>
+              </Link>
             </Flex>
             <div className={styles.megaBox}>
               <div className={styles.content}>
@@ -529,25 +492,25 @@ const MenSubNav = () => {
                   <div className={styles.midNavImg}>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/topshop-curve-ultimate-blazer-dress-in-black/203178228-1-black?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/navigation/mw_clothing_wedding_3m_1911570?&$n_240w$"
                         alt=""
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/topshop-curve-ombre-cut-out-long-sleeve-midi-dress-in-multi/203356957-1-multi?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/products/asos-design-oversized-varsity-bomber-jacket-in-navy-with-mushroom-faux-leather-sleeves/201185943-1-navy?$n_480w$&wid=476&fit=constrain"
                         alt=""
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/river-island-plus-metallic-thread-mini-dress-in-silver/203984156-1-silver?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/products/hnr-ldn-poster-back-print-sleeveless-t-shirt-in-black/202367824-1-black?$n_480w$&wid=476&fit=constrain"
                         alt=""
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/river-island-plus-zebra-plisse-midi-dress-in-black/204052072-1-black?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/products/asos-design-puffer-jacket-in-blue/202450441-1-midblue?$n_480w$&wid=476&fit=constrain"
                         alt=""
                       />
                     </div>
@@ -559,36 +522,37 @@ const MenSubNav = () => {
                   </header>
                   <div className={styles.shopList}>
                     <div>
+
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_wedding_3M_111178847?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_last_chance_flo_105469462_3m?&$n_240w$"
                         alt=""
                       />
                       <p>Weading</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_bridal_3M_1618123?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_occasionwear_flo_105399272_3m?&$n_240w$"
                         alt=""
                       />
                       <p>Bridal</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_modestfashion_3M_114696164?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_asos_workwear_flo_1947069_3m_B?&$n_240w$"
                         alt=""
                       />
                       <p>Modest fashion</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_clothing_lastchancetobuydress_2M_115452191?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_clothing_shopbyoccasion_partywearglobal_5wl_1310421?&$n_240w$"
                         alt=""
                       />
                       <p>Last chance</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_au_clothing_workwear_3M_109335997?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_clothing_wedding_3m_1911570?&$n_240w$"
                         alt=""
                       />
                       <p>Workwear</p>
@@ -607,7 +571,9 @@ const MenSubNav = () => {
               justifyContent={"center"}
               h="49px"
             >
+              <Link className={styles.Link} to="/menshoe">
               <Text>Shoes</Text>
+              </Link>
             </Flex>
             <Box className={styles.megaBox}>
               <Box className={styles.content}>
@@ -689,7 +655,7 @@ Loafers
                     />
 
                     <img
-                      src="https://images.asos-media.com/navigation/ww_global_winter_boots_1650x1884_080922?&$n_320w$"
+                      src="https://images.asos-media.com/navigation/mw_global_mw_newbalance_1650x1884_080922?&$n_320w$"
                       alt=""
                     />
                   </div>
@@ -707,7 +673,9 @@ Loafers
               justifyContent={"center"}
               h="49px"
             >
+              <Link className={styles.Link} to="/mensportwear">
               <Text>Sportwear</Text>
+              </Link>
               <div className={styles.megaBox}>
               <div className={styles.content}>
                 <div className={styles.row}>
@@ -797,25 +765,25 @@ Loafers
                   <div className={styles.midNavImg}>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/topshop-curve-ultimate-blazer-dress-in-black/203178228-1-black?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/navigation/mw_clothing_wedding_3m_1911570?&$n_240w$"
                         alt=""
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/topshop-curve-ombre-cut-out-long-sleeve-midi-dress-in-multi/203356957-1-multi?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/products/asos-design-oversized-varsity-bomber-jacket-in-navy-with-mushroom-faux-leather-sleeves/201185943-1-navy?$n_480w$&wid=476&fit=constrain"
                         alt=""
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/river-island-plus-metallic-thread-mini-dress-in-silver/203984156-1-silver?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/products/hnr-ldn-poster-back-print-sleeveless-t-shirt-in-black/202367824-1-black?$n_480w$&wid=476&fit=constrain"
                         alt=""
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/river-island-plus-zebra-plisse-midi-dress-in-black/204052072-1-black?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/products/asos-design-puffer-jacket-in-blue/202450441-1-midblue?$n_480w$&wid=476&fit=constrain"
                         alt=""
                       />
                     </div>
@@ -827,36 +795,37 @@ Loafers
                   </header>
                   <div className={styles.shopList}>
                     <div>
+
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_wedding_3M_111178847?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_last_chance_flo_105469462_3m?&$n_240w$"
                         alt=""
                       />
                       <p>Weading</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_bridal_3M_1618123?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_occasionwear_flo_105399272_3m?&$n_240w$"
                         alt=""
                       />
                       <p>Bridal</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_modestfashion_3M_114696164?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_asos_workwear_flo_1947069_3m_B?&$n_240w$"
                         alt=""
                       />
                       <p>Modest fashion</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_clothing_lastchancetobuydress_2M_115452191?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_clothing_shopbyoccasion_partywearglobal_5wl_1310421?&$n_240w$"
                         alt=""
                       />
                       <p>Last chance</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_au_clothing_workwear_3M_109335997?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_clothing_wedding_3m_1911570?&$n_240w$"
                         alt=""
                       />
                       <p>Workwear</p>
@@ -876,7 +845,9 @@ Loafers
               justifyContent={"center"}
               h="49px"
             >
+              <Link className={styles.Link} to="/menaccessories">
               <Text>Accessories</Text>
+              </Link>
               <Box className={styles.megaBox}>
               <Box className={styles.content}>
                 <div className={styles.row}>
@@ -912,48 +883,24 @@ Loafers
                   </ul>
                 </div>
                 <div className={styles.row}>
-                  <header>Shoap By body fit</header>
-                  <div className={styles.midNavImg}>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_curveplussize_3M_114998343?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_maternity_3M_113467652?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_petite_3M_1999343?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_tall_3M_104174270?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.row}>
                   <header>NEW EDITS</header>
                   <div className={styles.lPImage}>
                     <img
-                      src="https://images.asos-media.com/navigation/WW_Go_for_glam_1650x1884?&$n_320w$"
+                      src="https://images.asos-media.com/products/reclaimed-vintage-inspired-the-94-classic-fit-jeans-in-ecru/200438574-1-ecru?$n_480w$&wid=476&fit=constrain"
                       alt=""
                     />
 
                     <img
-                      src="https://images.asos-media.com/navigation/ww_asos_edition_1650x1884_june?&$n_320w$"
+                      src="https://images.asos-media.com/products/asos-design-muscle-long-sleeve-jersey-roll-neck-t-shirt-in-black/201263628-1-black?$n_480w$&wid=476&fit=constrain"
+                      alt=""
+                    />
+                    <img
+                      src="https://images.asos-media.com/products/asos-design-mini-fisherman-beanie-with-fluffy-knit-in-burnt-orange/200943696-1-yama?$n_480w$&wid=476&fit=constrain"
                       alt=""
                     />
                   </div>
                 </div>
+               
               </Box>
             </Box>
             </Flex>
@@ -967,8 +914,9 @@ Loafers
               justifyContent={"center"}
               h="49px"
             >
+              <Link className={styles.Link} to="/menautumn">
               <Text>Autunm</Text>
-              
+              </Link>
             </Flex>
           </li>
           <li>
@@ -980,7 +928,9 @@ Loafers
               justifyContent={"center"}
               h="49px"
             >
+              <Link className={styles.Link} to="/mengifting">
               <Text>Gifting</Text>
+              </Link>
               <div className={styles.megaBox}>
               <div className={styles.content}>
                 <div className={styles.row}>
@@ -1070,25 +1020,25 @@ Loafers
                   <div className={styles.midNavImg}>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/topshop-curve-ultimate-blazer-dress-in-black/203178228-1-black?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/navigation/mw_clothing_wedding_3m_1911570?&$n_240w$"
                         alt=""
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/topshop-curve-ombre-cut-out-long-sleeve-midi-dress-in-multi/203356957-1-multi?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/products/asos-design-oversized-varsity-bomber-jacket-in-navy-with-mushroom-faux-leather-sleeves/201185943-1-navy?$n_480w$&wid=476&fit=constrain"
                         alt=""
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/river-island-plus-metallic-thread-mini-dress-in-silver/203984156-1-silver?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/products/hnr-ldn-poster-back-print-sleeveless-t-shirt-in-black/202367824-1-black?$n_480w$&wid=476&fit=constrain"
                         alt=""
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/river-island-plus-zebra-plisse-midi-dress-in-black/204052072-1-black?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/products/asos-design-puffer-jacket-in-blue/202450441-1-midblue?$n_480w$&wid=476&fit=constrain"
                         alt=""
                       />
                     </div>
@@ -1100,36 +1050,37 @@ Loafers
                   </header>
                   <div className={styles.shopList}>
                     <div>
+
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_wedding_3M_111178847?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_last_chance_flo_105469462_3m?&$n_240w$"
                         alt=""
                       />
                       <p>Weading</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_bridal_3M_1618123?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_occasionwear_flo_105399272_3m?&$n_240w$"
                         alt=""
                       />
                       <p>Bridal</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_modestfashion_3M_114696164?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_asos_workwear_flo_1947069_3m_B?&$n_240w$"
                         alt=""
                       />
                       <p>Modest fashion</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_clothing_lastchancetobuydress_2M_115452191?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_clothing_shopbyoccasion_partywearglobal_5wl_1310421?&$n_240w$"
                         alt=""
                       />
                       <p>Last chance</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_au_clothing_workwear_3M_109335997?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_clothing_wedding_3m_1911570?&$n_240w$"
                         alt=""
                       />
                       <p>Workwear</p>
@@ -1149,7 +1100,9 @@ Loafers
               justifyContent={"center"}
               h="49px"
             >
+              <Link className={styles.Link} to="/mentopshop">
               <Text>Topshop</Text>
+              </Link>
             </Flex>
           </li>
           <li>
@@ -1161,7 +1114,9 @@ Loafers
               justifyContent={"center"}
               h="49px"
             >
-              <Text>Face + Body</Text>
+              <Link className={styles.Link} to="/menfacebody">
+              <Text w="80px">Face + Body</Text>
+              </Link>
               <Box className={styles.megaBox}>
               <Box className={styles.content}>
                 <div className={styles.row}>
@@ -1197,48 +1152,24 @@ Loafers
                   </ul>
                 </div>
                 <div className={styles.row}>
-                  <header>Shoap By body fit</header>
-                  <div className={styles.midNavImg}>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_curveplussize_3M_114998343?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_maternity_3M_113467652?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_petite_3M_1999343?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_newin_tall_3M_104174270?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.row}>
                   <header>NEW EDITS</header>
                   <div className={styles.lPImage}>
                     <img
-                      src="https://images.asos-media.com/navigation/WW_Go_for_glam_1650x1884?&$n_320w$"
+                      src="https://images.asos-media.com/products/reclaimed-vintage-inspired-the-94-classic-fit-jeans-in-ecru/200438574-1-ecru?$n_480w$&wid=476&fit=constrain"
                       alt=""
                     />
 
                     <img
-                      src="https://images.asos-media.com/navigation/ww_asos_edition_1650x1884_june?&$n_320w$"
+                      src="https://images.asos-media.com/products/asos-design-muscle-long-sleeve-jersey-roll-neck-t-shirt-in-black/201263628-1-black?$n_480w$&wid=476&fit=constrain"
+                      alt=""
+                    />
+                    <img
+                      src="https://images.asos-media.com/products/asos-design-mini-fisherman-beanie-with-fluffy-knit-in-burnt-orange/200943696-1-yama?$n_480w$&wid=476&fit=constrain"
                       alt=""
                     />
                   </div>
                 </div>
+               
               </Box>
             </Box>
             </Flex>
@@ -1252,8 +1183,9 @@ Loafers
               justifyContent={"center"}
               h="49px"
               mr={2}
-            >
+            ><Link className={styles.Link} to="/menbrand">
               <Text>Brands</Text>
+              </Link>
             </Flex>
           </li>
           <li>
@@ -1268,14 +1200,187 @@ Loafers
               mr="10px"
               h="49px"
             >
+              <Link className={styles.Link} to="/menoutlet">
               <Text
                 transform={"skew(10deg)"}
                 _hover={{ transform: "skew(0deg)" }}
               >
                 Outlet
               </Text>
+              </Link>
             </Flex>
             <div className={styles.megaBox}>
+              <div className={styles.content}>
+                <div className={styles.row}>
+                  <header style={{ textDecoration: "underline" }}>
+                    SHOP BY TYPE
+                  </header>
+                  <ul className={styles.megaLinks}>
+                    <li>
+                      <a href="#">Dresses under £20</a>
+                    </li>
+                    <li>
+                      <Link to={"/women/dress"}>View all</Link>
+                    </li>
+                    <li>
+                      <Link>New in</Link>
+                    </li>
+                    <li>
+                      <a href="#">Evening dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Wedding guest dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Day dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Bridesmaid dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Party dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Wedding dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Linen dresses</a>
+                    </li>
+                  </ul>
+                </div>
+                <div className={styles.row}>
+                  <ul
+                    style={{
+                      borderLeft: "1px solid black",
+                      paddingLeft: "10px",
+                      marginTop: "0px",
+                    }}
+                    className={styles.megaLinks}
+                  >
+                    <header style={{ textDecoration: "underline" }}>
+                      {" "}
+                      SHOP BY TREND
+                    </header>
+                    <li>
+                      <a href="#">Floral dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Long sleeve dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Maxi dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Midi dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Mini dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Satin dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Shirt dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Smock dresses</a>
+                    </li>
+                    <li>
+                      <a href="#">Summer Dresses</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className={styles.row}>
+                  <header style={{ textDecoration: "underline" }}>
+                    SHOP BY BODY FIT
+                  </header>
+                  <div className={styles.midNavImg}>
+                    <div>
+                      <img
+                        src="https://images.asos-media.com/navigation/mw_clothing_wedding_3m_1911570?&$n_240w$"
+                        alt=""
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="https://images.asos-media.com/products/asos-design-oversized-varsity-bomber-jacket-in-navy-with-mushroom-faux-leather-sleeves/201185943-1-navy?$n_480w$&wid=476&fit=constrain"
+                        alt=""
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="https://images.asos-media.com/products/hnr-ldn-poster-back-print-sleeveless-t-shirt-in-black/202367824-1-black?$n_480w$&wid=476&fit=constrain"
+                        alt=""
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="https://images.asos-media.com/products/asos-design-puffer-jacket-in-blue/202450441-1-midblue?$n_480w$&wid=476&fit=constrain"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.row}>
+                  <header style={{ textDecoration: "underline" }}>
+                    SHOP BY EDIT
+                  </header>
+                  <div className={styles.shopList}>
+                    <div>
+
+                      <img
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_last_chance_flo_105469462_3m?&$n_240w$"
+                        alt=""
+                      />
+                      <p>Weading</p>
+                    </div>
+                    <div>
+                      <img
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_occasionwear_flo_105399272_3m?&$n_240w$"
+                        alt=""
+                      />
+                      <p>Bridal</p>
+                    </div>
+                    <div>
+                      <img
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_asos_workwear_flo_1947069_3m_B?&$n_240w$"
+                        alt=""
+                      />
+                      <p>Modest fashion</p>
+                    </div>
+                    <div>
+                      <img
+                        src="https://images.asos-media.com/navigation/mw_clothing_shopbyoccasion_partywearglobal_5wl_1310421?&$n_240w$"
+                        alt=""
+                      />
+                      <p>Last chance</p>
+                    </div>
+                    <div>
+                      <img
+                        src="https://images.asos-media.com/navigation/mw_clothing_wedding_3m_1911570?&$n_240w$"
+                        alt=""
+                      />
+                      <p>Workwear</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <Flex
+              color={"white"}
+              _hover={{ bgColor: "white", color: "black" }}
+              alignItems={"center"}
+              w="80px"
+              justifyContent={"center"}
+              h="49px"
+            >
+              <Link className={styles.Link} to="/menmarketplace">
+              <Text>Marketplace</Text>
+</Link>
+              <div className={styles.megaBox}>
               <div className={styles.content}>
                 <div className={styles.row}>
                   <header style={{ textDecoration: "underline" }}>
@@ -1355,195 +1460,16 @@ Loafers
                     SHOP BY BODY FIT
                   </header>
                   <div className={styles.midNavImg}>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_asoscurveandplussize_3M_115454141?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_maternity_3M_117396604?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_petite_3M_111618675?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_tall_3M_116746580?&$n_240w$"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.row}>
-                  <header style={{ textDecoration: "underline" }}>
-                    SHOP BY EDIT
-                  </header>
-                  <div className={styles.shopList}>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_wedding_3M_111178847?&$n_240w$"
-                        alt=""
-                      />
-                      <p>Weading</p>
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_bridal_3M_1618123?&$n_240w$"
-                        alt=""
-                      />
-                      <p>Bridal</p>
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_modestfashion_3M_114696164?&$n_240w$"
-                        alt=""
-                      />
-                      <p>Modest fashion</p>
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_clothing_lastchancetobuydress_2M_115452191?&$n_240w$"
-                        alt=""
-                      />
-                      <p>Last chance</p>
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/navigation/ww_au_clothing_workwear_3M_109335997?&$n_240w$"
-                        alt=""
-                      />
-                      <p>Workwear</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <Flex
-              color={"white"}
-              _hover={{ bgColor: "white", color: "black" }}
-              alignItems={"center"}
-              w="80px"
-              justifyContent={"center"}
-              h="49px"
-            >
-              <Text>Marketplace</Text>
-              <div className={styles.megaBox}>
-              <div className={styles.content}>
-                <div className={styles.row}>
-                  <header style={{ textDecoration: "underline" }}>
-                    SHOP BY TYPE
-                  </header>
-                  <ul className={styles.megaLinks}>
-                    <li>
-                      <a href="#">Dresses under £20</a>
-                    </li>
-                    <li>
-                      <Link to={"/women/dress"}>View all</Link>
-                    </li>
-                    <li>
-                      <Link>New in</Link>
-                    </li>
-                    <li>
-                      <a href="#">Evening dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Wedding guest dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Day dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Bridesmaid dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Party dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Wedding dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Linen dresses</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className={styles.row}>
-                  <ul
-                    style={{
-                      borderLeft: "1px solid black",
-                      paddingLeft: "10px",
-                      marginTop: "0px",
-                    }}
-                    className={styles.megaLinks}
-                  >
-                    <header style={{ textDecoration: "underline" }}>
-                      {" "}
-                      SHOP BY TREND
-                    </header>
-                    <li>
-                      <a href="#">Floral dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Long sleeve dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Maxi dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Midi dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Mini dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Satin dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Shirt dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Smock dresses</a>
-                    </li>
-                    <li>
-                      <a href="#">Summer Dresses</a>
-                    </li>
-                  </ul>
-                </div>
 
-                <div className={styles.row}>
-                  <header style={{ textDecoration: "underline" }}>
-                    SHOP BY BODY FIT
-                  </header>
-                  <div className={styles.midNavImg}>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/topshop-curve-ultimate-blazer-dress-in-black/203178228-1-black?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_loungewear_flo_114193941_3m?&$n_240w$"
                         alt=""
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/products/topshop-curve-ombre-cut-out-long-sleeve-midi-dress-in-multi/203356957-1-multi?$n_480w$&wid=476&fit=constrain"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/products/river-island-plus-metallic-thread-mini-dress-in-silver/203984156-1-silver?$n_480w$&wid=476&fit=constrain"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://images.asos-media.com/products/river-island-plus-zebra-plisse-midi-dress-in-black/204052072-1-black?$n_480w$&wid=476&fit=constrain"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_top_picks_flo_118709147_2m?&$n_240w$"
                         alt=""
                       />
                     </div>
@@ -1555,36 +1481,37 @@ Loafers
                   </header>
                   <div className={styles.shopList}>
                     <div>
+
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_wedding_3M_111178847?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_last_chance_flo_105469462_3m?&$n_240w$"
                         alt=""
                       />
                       <p>Weading</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_bridal_3M_1618123?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_occasionwear_flo_105399272_3m?&$n_240w$"
                         alt=""
                       />
                       <p>Bridal</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_gbl_clothing_modestfashion_3M_114696164?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_gbl_clothing_asos_workwear_flo_1947069_3m_B?&$n_240w$"
                         alt=""
                       />
                       <p>Modest fashion</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_clothing_lastchancetobuydress_2M_115452191?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_clothing_shopbyoccasion_partywearglobal_5wl_1310421?&$n_240w$"
                         alt=""
                       />
                       <p>Last chance</p>
                     </div>
                     <div>
                       <img
-                        src="https://images.asos-media.com/navigation/ww_au_clothing_workwear_3M_109335997?&$n_240w$"
+                        src="https://images.asos-media.com/navigation/mw_clothing_wedding_3m_1911570?&$n_240w$"
                         alt=""
                       />
                       <p>Workwear</p>

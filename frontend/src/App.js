@@ -1,20 +1,32 @@
+
 import { Box} from "@chakra-ui/react";
 import "./App.css";
 
 import { Navbar } from "./components/Navbar/Navbar";
 import Footer from "./Pages/Footer";
-// import WomenPage from "./Pages/WomenPage";
  import MenPage from "./Pages/MenPage";
+import { Box, } from "@chakra-ui/react";
+import "./App.css";
+
+import { Navbar } from "./components/Navbar/Navbar";
+import { AllRoutes } from "./Pages/AllRoutes";
+
+
 
 
 function App() {
   return (
     <>
     <Box className="font-face-pt ">
+
       <Navbar />
-     {/* <WomenPage/> */}
+   
      <MenPage/>
      <Footer/>
+
+
+     <AllRoutes />
+
     </Box>
     </>
   );
