@@ -11,7 +11,6 @@ export const Navbar = () => {
       <TopBanner />
       <MiddleNav />
 
-      <BottomBanner />
 
     </Box>
   );

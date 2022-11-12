@@ -27,7 +27,13 @@ import styles from "./nav.module.css";
 import SubNav from "./WomensubMenu";
 import MenSubNav from "./MenSubNav";
 import { BottomBanner } from "./BottomBanner";
+import { useDispatch } from "react-redux";
+import { SwitchTab } from "../../Redux/App/action";
 export const MiddleNav = () => {
+  const dispatch=useDispatch();
+  const HandleTab=(type)=>{
+    dispatch(SwitchTab(type))
+  }
   return (
     <Tabs variant="unstyled">
       <TabList>
@@ -40,7 +46,7 @@ export const MiddleNav = () => {
             m={"auto"}
           >
             <Box mr="20px" fontWeight={"bold"}>
-              <Link to="/">
+              <Link to="/womenhome">
                 <Heading size={"xl"}>Fashion World</Heading>
               </Link>
             </Box>
@@ -50,8 +56,9 @@ export const MiddleNav = () => {
               w="8%"
               h="100%"
               fontWeight={"bold"}
+             
             >
-                <Link to={"/women"}> WOMEN</Link>
+                <Link to={"/womenhome"}> WOMEN</Link>
             </Tab>
 
         <Tab
@@ -61,14 +68,13 @@ export const MiddleNav = () => {
               h="100%"
               fontWeight={"bold"}
             >
-             <Link to={"/men"}> MEN</Link>
+             <Link to={"/menhome"}> MEN</Link>
             </Tab>
           
             <SearchInput />
             <Box ml={10}>
               <Flex alignItems={"center"}>
                 <Popover>
-
                   <PopoverTrigger>
                     <Button
                       mr={-5}
@@ -125,35 +131,6 @@ export const MiddleNav = () => {
                     </PopoverBody>
                   </PopoverContent>
                 </Popover>
-
-  <PopoverTrigger>
- 
-    <Button mr={-5} bgColor={"transparent"} _hover={{bgColor:"transparent"}}><HiOutlineUser size={30} /></Button>
-    </PopoverTrigger>
-  <PopoverContent color="black">
-    <PopoverArrow />
-    <PopoverCloseButton />
-    <PopoverHeader bgColor={"#ddd"}>
-        <Link to="/signin">Sign In</Link>
-           |   <Link to="/signup">Join</Link>
-    </PopoverHeader>
-    <PopoverBody>
-        <Flex _hover={{color:"#0770cf"}} mt={2} ml={2} alignItems={"center"}>
-        <HiOutlineUser size={30} /> <Text ml={2}> My Account</Text>
-        </Flex>
-        <Flex _hover={{color:"#0770cf"}} mt={5} ml={2} alignItems={"center"}>
-        <FiShoppingBag size={25} /><Text ml={2}> My Orders</Text>
-        </Flex>
-        <Flex _hover={{color:"#0770cf"}} mt={5} ml={2} alignItems={"center"}>
-        <RepeatClockIcon fontSize={"25px"} /><Text ml={2}> Returns Information</Text>
-        </Flex>
-        <Flex _hover={{color:"#0770cf"}} mt={5} ml={2} alignItems={"center"}>
-        <GrContact size={25}  /><Text ml={2}> Contact Preference</Text>
-        </Flex>
-    </PopoverBody>
-  </PopoverContent>
-</Popover>
-
                 <Link to="/wishlist">
                   <HiOutlineHeart size={30} style={{ marginLeft: "20px" }} />
                 </Link>
@@ -172,8 +149,8 @@ export const MiddleNav = () => {
           <BottomBanner />
         </TabPanel>
         <TabPanel p="0" w="100%">
-        <SubNav />
-          {/* <MenSubNav /> */}
+        {/* <SubNav /> */}
+          <MenSubNav />
           <BottomBanner />
         </TabPanel>
       </TabPanels>
