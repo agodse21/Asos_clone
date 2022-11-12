@@ -29,7 +29,7 @@ console.log(products)
   useEffect(() => {
     // = (type,page,limt)
     // dispatch(loadProduct("women","one peace"));
-    dispatch( loadProductWithQuery("men",2,12));
+    dispatch( loadProductWithQuery("men",4,12));
   }, [dispatch]);
 
   const handleToggle = () => setShow(!show);

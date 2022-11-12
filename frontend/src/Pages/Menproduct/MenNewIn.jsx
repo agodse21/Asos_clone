@@ -28,7 +28,7 @@ export const MenNewIn = () => {
 console.log(products)
   useEffect(() => {
     // = (type,page,limt)
-    dispatch( loadProductWithQuery("men",2,12));
+    dispatch( loadProductWithQuery("men",3,12));
   }, [dispatch]);
 
   const handleToggle = () => setShow(!show);
