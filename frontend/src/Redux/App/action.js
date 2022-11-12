@@ -52,6 +52,7 @@ export const loadProductWithQuery = (type,page,limt) => {
 
 }
 
+
 export const SwitchTab=(type)=>{
     loadProduct(type)
 }

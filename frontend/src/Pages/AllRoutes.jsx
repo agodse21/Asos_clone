@@ -17,6 +17,7 @@ import { MenShoes } from "./Menproduct/MenShoes";
 import { MenSportWear } from "./Menproduct/MenSportwear";
 import { MenTopShop } from "./Menproduct/MenTopShop";
 import SigninandSignup from "./Signin&Signup";
+import SinglePageProduct from "./SinglePageProduct";
 import { WomenAccessoris } from "./womenProduct/WomenAcceseoris";
 import { WomenAutumn } from "./womenProduct/WomenAutumn";
 import { WomenBrand } from "./womenProduct/WomenBrand";
@@ -71,6 +72,7 @@ export const AllRoutes = () => {
         <Route path="/menaccessories" element={<MenAccessoris />} />
         <Route path="/menautumn" element={<MenAutumn />} />
         <Route path="/mengifting" element={<MenGifting />} />
+        <Route path="/productdetails/:id" element={<SinglePageProduct/>}/>
       </Routes>
     </Box>
   );
