@@ -116,7 +116,9 @@ const Cartsingleitem = ({ el }) => {
             <Button onClick={handlecancel}>Cancel</Button>
             <Button onClick={()=>handleupdate(el)}>Update</Button>
           </HStack>
-          </div>:<div></div>
+        </div> : <div>
+            <Divider orientation='horizontal'></Divider>
+          </div>
       }
     </div>
   )

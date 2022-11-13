@@ -2,8 +2,8 @@ import axios from "axios";
 import * as types from "./actionTypes";
 // let usertoken = JSON.parse(localStorage.getItem("token")) || "";
 
-let userData= JSON.parse(localStorage.getItem('userdata'))||[]
-let usertoken =userData.token;
+let userData = JSON.parse(localStorage.getItem("userdata")) || [];
+let usertoken = userData.token;
 
 export const getaddcartdata = () => (dispatch) => {
   dispatch({ type: types.GET_CARTDATA_REQUEST });
@@ -15,9 +15,8 @@ export const getaddcartdata = () => (dispatch) => {
       },
     })
     .then((r) => {
-      console.log("amol:",r.data.data);
+      console.log("amol:", r.data.data);
       dispatch({ type: types.GET_CARTDATA_SUCCESS, payload: r.data.data });
-
     })
     .catch((err) => {
       dispatch({ type: types.GET_CARTDATA_FAIL });

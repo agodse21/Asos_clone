@@ -1,5 +1,6 @@
 import * as types from "./acttionTypes";
 import axios from "axios";
+import { getaddcartdata } from "../Addtocart/action";
 
 const getProduct = (products) => ({
   type: types.GET_PRODUCT,
@@ -12,9 +13,9 @@ const getProduct = (products) => ({
 
 // })
 
-let userData= JSON.parse(localStorage.getItem('userdata'))||[];
-let token=userData.token;
-console.log(userData.token)
+let userData = JSON.parse(localStorage.getItem("userdata")) || [];
+let token = userData.token;
+console.log(userData.token);
 export const loadProduct = (type, cate) => {
   return function (dispatch) {
     axios
@@ -34,17 +35,25 @@ export const loadProduct = (type, cate) => {
   };
 };
 
-export const searchProduct=(query)=>dispatch=>{
-axios.get(`https://asos-backend.onrender.com/womenproduct/?product_name=${query}`,{
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-}).then((r)=>{
-  console.log(r.data)
- dispatch({type: "SEARCH_ITEM", payload:{data: r.data.data,query:query}})
-}).catch(e=>console.log(e))
-
-} 
+export const searchProduct = (query) => (dispatch) => {
+  axios
+    .get(
+      `https://asos-backend.onrender.com/womenproduct/?product_name=${query}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+    .then((r) => {
+      console.log(r.data);
+      dispatch({
+        type: "SEARCH_ITEM",
+        payload: { data: r.data.data, query: query },
+      });
+    })
+    .catch((e) => console.log(e));
+};
 export const loadProductWithQuery = (type, page, limt) => {
   return function (dispatch) {
     // https://asos-backend.onrender.com/?product_name=${shs}&category=sale
@@ -76,7 +85,9 @@ export const Addtocart = (data) => (dispatch) => {
         Authorization: `Bearer ${token}`,
       },
     })
-    .then((r) => console.log("data added"))
+    .then((r) => {
+      dispatch(getaddcartdata());
+    })
     .catch((err) => {
       console.log(err);
     });

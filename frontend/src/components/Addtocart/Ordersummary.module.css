@@ -11,9 +11,9 @@
    width: 100%;
    border-radius: 5px;
    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    position:sticky;
-    top:0
-    
+   
+    /* top:0;
+    position:sticky; */
 
 }
 /* @media screen and (max-width:900px) {
