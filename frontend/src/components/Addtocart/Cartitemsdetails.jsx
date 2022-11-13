@@ -15,14 +15,14 @@ const Cartitemsdetails = ({data}) => {
   
   return (
     <div className={styles.cartitem_d_mainbox}>
-      <VStack w="100%">
-        <Box>
-          <HStack w="100%" h="60px" spacing="20" border="1px solid black">
-            <Text  fontWeight="bold" fontSize="1xl">MY BAG</Text>
-            <Text>Items are reversed for 60 minutes</Text>
+      <VStack w="100%" >
+        <Box w="95%"   marginBottom="10px">
+          <HStack   justify="space-between" w="95%" margin="auto">
+           <Box w="30%"> <Text  fontWeight="bold" fontSize="20px">MY BAG</Text></Box>
+           <Box > <Text>Items are reversed for 60 minutes</Text></Box>
           </HStack>
         </Box>
-        
+        <Divider orientation="horizontal"></Divider>
       </VStack>
       <div>
         {

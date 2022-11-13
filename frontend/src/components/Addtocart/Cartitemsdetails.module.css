@@ -1,6 +1,15 @@
 .cartitem_d_mainbox{
     width: 100%;
-    
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin:auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
     
     position: relative;
+}
+@media screen and (max-width:800px) {
+    .cartitem_d_mainbox{
+        width: 100%;
+    }
 }
