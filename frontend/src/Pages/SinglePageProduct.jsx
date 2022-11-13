@@ -6,40 +6,59 @@ import { useDispatch, useSelector } from "react-redux";
 import { CART } from '../Redux/App/acttionTypes';
 import { useState } from 'react';
 import { Addtocart } from '../Redux/App/action';
+import axios from 'axios';
 const SinglePageProduct = () => {
     const [size,setSize]= useState("")
     const [show, setShow] =useState(false)
     const handleToggle = () => setShow(!show)
+    const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYzNmRmNGM1MWI1OTFkOWY1NmY3MWVlNSIsImVtYWlsIjoiYW1vbEBnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJhbW9sIiwibGFzdG5hbWUiOiJnb2RzZSIsInBhc3N3b3JkIjoiJDJiJDA0JGZncm5YcC42ZS96QXhrMGt3T2w4NE9Tb3J3bkdQTzI4QVhrVXU3dU51OE1KckQ5SzVQVVZ1IiwiZG9iIjoiMjQtMy0yMDIyIiwiaW50ZXJlc3QiOiJ5ZXMiLCJfX3YiOjB9LCJpYXQiOjE2NjgxNTQxMTh9.zn0YdLwze8q1fwwCFd07YQmRGyfjLCM9rFJOHkTcrOw"
     const {id}= useParams();
     const dispatch=useDispatch();
     const navigate= useNavigate();
     const products  = useSelector((state) => state.AppReducer.products);
-    const cart  = useSelector((state) => state.AppReducer.cart);
+    const cart = useSelector((state) => state.AppReducer.cart);
+    console.log(id)
     let type=id.split("_")[0];  
     let  typeid = id.split("_")[1];
     const [singleProduct, setSingleProduct]= useState({})
 
-    var temp;
-    useEffect(()=>{
-        if(typeid ){
-          // eslint-disable-next-line react-hooks/exhaustive-deps
-          temp = products?.find( product => product._id ===(typeid));
-          // eslint-disable-next-line no-unused-vars
-        
-          temp && setSingleProduct(temp);
+    var temp=[];
+    
+    console.log(temp)
+    const getdata = async () => {
+    console.log("inside getdata ",type,typeid,token)
+       await axios.get(`https://asos-backend.onrender.com/${type}product/?product_id=${typeid}`, {
+        headers: {
+            Authorization:`Bearer ${token}`
         }
-         },[products, typeid,type]);
+    }).then((r)=>setSingleProduct(r.data.data[0])).catch((err)=>console.log(err))
+    }
+
+    useEffect(()=>{
+        // if(typeid ){
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+        //   temp = products?.find( product => product._id ===(typeid));
+            getdata()
+          // eslint-disable-next-line no-unused-vars
+        //   temp = products?.filter((el) => el._id == typeid)
+        //  setSingleProduct(singleProduct);
+        // }
+        // return () => {
+            
+        //  }
+    }, [type,typeid]);
+    console.log("product",products)
     const handleAddtobag=()=>{
-       if(temp?._id){
-        let price=temp?.price;
-        if(temp?.price[0]=="�"){
+       if(singleProduct?._id){
+        let price=singleProduct?.price;
+        if(singleProduct?.price[0]=="�"){
             price=  price.split("�")[1]
         }
-        else if(temp?.price[0]=="£"){
+        else if(singleProduct?.price[0]=="£"){
             price=  price.split("£")[1]
         }
         else{
-            price=temp?.price
+            price=singleProduct?.price
         }
         
         // .split("�")[1] 
@@ -47,15 +66,15 @@ const SinglePageProduct = () => {
         console.log(price);
         let obj={
             
-            product_id:temp?._id,
+            product_id:singleProduct._id,
             product_details:{
-                product_img:temp?.mainImage || temp?.mainimage,
+                product_img:singleProduct?.mainImage || singleProduct?.mainimage,
                 product_price:price,
-                product_name:temp?.name,
-                product_color:temp?.color
+                product_name:singleProduct?.name,
+                product_color:singleProduct?.color
             },
             item_no:1,
-            size:size
+            size:singleProduct?.size
         };
         console.log(size)
 
@@ -190,7 +209,7 @@ const SinglePageProduct = () => {
                         <Button className="Box" width={"80%"} marginLeft={"5px"}
                          _hover={{color:"white" , bg:"fullgreen"}} marginTop={"5px"}
                           textAlign={"center"} color={"white"} backgroundColor={"green"}
-                           onClick={handleAddtobag} >ADD TO BAG</Button>
+                           onClick={()=>handleAddtobag()} >ADD TO BAG</Button>
                         <Button className="Box"><Box className="Box" textAlign={"center"} marginLeft={"5px"} marginTop={"10px"}  > < FaHeart/> </Box></Button>
                         </HStack>
                     </Box>

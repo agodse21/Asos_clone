@@ -1,3 +1,4 @@
+
 import { combineReducers } from "redux";
 import { reducers as AppReducer } from "./App/reducer";
 import { reducer as CartReducer } from "./Addtocart/reducer";
@@ -12,3 +13,4 @@ const rootreducer = combineReducers({
 });
 
 export default rootreducer;
+

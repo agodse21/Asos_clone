@@ -1,7 +1,9 @@
+
+import Maincartpage from "../components/Addtocart/Maincartpage";
+
 import { Box } from "@chakra-ui/react";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Maincartpage from "../components/Addtocart/Maincartpage";
 import { Navbar } from "../components/Navbar/Navbar";
 
 import Footer from "./Footer";
@@ -58,8 +60,8 @@ export const AllRoutes = () => {
         {/* <Route path="/checkout" element={<CheckOut />} /> */}
         <Route path="/wishlist" element={<CheckOut />} />
 
-        <Route path="/womensale" element={<WomenSale />} />
         <Route path="/womentopshop" element={<WomenTopShop />} />
+        <Route path="/womensale" element={<WomenSale />} />
         <Route path="/womenbrand" element={<WomenBrand />} />
         <Route path="/womenoutlet" element={<WomenOulet />} />
         <Route path="/womenmarketplace" element={<WomenMarketPlace />} />
@@ -88,9 +90,11 @@ export const AllRoutes = () => {
         <Route path="/menaccessories" element={<MenAccessoris />} />
         <Route path="/menautumn" element={<MenAutumn />} />
         <Route path="/mengifting" element={<MenGifting />} />
+          <Route path="/productdetails/:id" element={<SinglePageProduct/>}/>
+           <Route path="/cart" element={<Maincartpage/>}></Route>
       </Routes>
-
-      <Footer/>
+<Footer />
+      
     </Box>
   );
 };

@@ -37,7 +37,7 @@ export const MiddleNav = () => {
   }
   return (
     <Tabs variant="unstyled">
-       <TabList>
+      <TabList>
         <Box h="60px" w="100%" bgColor={"#2d2d2d"}>
           <Flex
             color={"white"}
@@ -132,7 +132,6 @@ export const MiddleNav = () => {
                     </PopoverBody>
                   </PopoverContent>
                 </Popover>
-
                 <Link to="/wishlist">
                   <HiOutlineHeart size={30} style={{ marginLeft: "20px" }} />
                 </Link>
@@ -144,7 +143,6 @@ export const MiddleNav = () => {
             </Box>
           </Flex>
         </Box>
-
       </TabList>
       <TabPanels>
         <TabPanel p="0" w="100%">
