@@ -34,6 +34,17 @@ export const loadProduct = (type, cate) => {
   };
 };
 
+export const searchProduct=(query)=>dispatch=>{
+axios.get(`https://asos-backend.onrender.com/womenproduct/?product_name=${query}`,{
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+}).then((r)=>{
+  console.log(r.data)
+ dispatch({type: "SEARCH_ITEM", payload:{data: r.data.data,query:query}})
+}).catch(e=>console.log(e))
+
+} 
 export const loadProductWithQuery = (type, page, limt) => {
   return function (dispatch) {
     // https://asos-backend.onrender.com/?product_name=${shs}&category=sale

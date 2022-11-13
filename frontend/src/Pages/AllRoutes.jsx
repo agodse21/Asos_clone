@@ -45,6 +45,7 @@ import { WomenSale } from "./womenProduct/WomenSale";
 import { WomenShoes } from "./womenProduct/WomenShoes";
 import { WomenSportWear } from "./womenProduct/WomenSportwear";
 import { WomenTopShop } from "./womenProduct/WomenTopShop";
+import { SearchPage } from "./SearchPage";
 
 export const AllRoutes = () => {
   return (
@@ -92,6 +93,8 @@ export const AllRoutes = () => {
         <Route path="/mengifting" element={<MenGifting />} />
           <Route path="/productdetails/:id" element={<SinglePageProduct/>}/>
            <Route path="/cart" element={<Maincartpage/>}></Route>
+           <Route path="/searchproduct" element={<SearchPage />}></Route>
+           
       </Routes>
 <Footer />
       
