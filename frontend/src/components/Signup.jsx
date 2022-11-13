@@ -36,6 +36,7 @@ export default function Signup() {
 
   const status = useSelector(e => e.AuthReducer.signup_status)
   const isError = useSelector(e => e.AuthReducer.isError)
+  const isErrorData = useSelector(e => e.AuthReducer.isErrorData)
 
   async function sendSignupRequest() {
     await dispatch(
@@ -50,7 +51,7 @@ useEffect(()=>{
     alert('Sign Up Success Now Time Login')
     window.location.reload()
   }else if(isError){
-    alert('Plz fill all correct input')
+    alert(isErrorData)
   }
 },[status,isError])
 

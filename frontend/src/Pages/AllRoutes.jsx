@@ -45,6 +45,7 @@ import { WomenSale } from "./womenProduct/WomenSale";
 import { WomenShoes } from "./womenProduct/WomenShoes";
 import { WomenSportWear } from "./womenProduct/WomenSportwear";
 import { WomenTopShop } from "./womenProduct/WomenTopShop";
+import { SearchPage } from "./SearchPage";
 
 export const AllRoutes = () => {
   return (
@@ -56,9 +57,9 @@ export const AllRoutes = () => {
 
         <Route path="/womenhome" element={<WomenPage />} />
 
-        <Route path="/" element={<WomenSale />} />
-        {/* <Route path="/checkout" element={<CheckOut />} /> */}
-        <Route path="/wishlist" element={<CheckOut />} />
+        <Route path="/" element={<WomenPage />} />
+        <Route path="/checkout" element={<CheckOut />} />
+        {/* <Route path="/wishlist" element={<CheckOut />} /> */}
 
         <Route path="/womentopshop" element={<WomenTopShop />} />
         <Route path="/womensale" element={<WomenSale />} />
@@ -91,9 +92,12 @@ export const AllRoutes = () => {
         <Route path="/menautumn" element={<MenAutumn />} />
         <Route path="/mengifting" element={<MenGifting />} />
         <Route path="/productdetails/:id" element={<SinglePageProduct />} />
-           <Route path="/cart" element={<Maincartpage />}></Route>
-    </Routes>
-    <Footer />
+           <Route path="/cart" element={<Maincartpage/>}></Route>
+           <Route path="/searchproduct" element={<SearchPage />}></Route>
+           
+      </Routes>
+<Footer />
+
       
     </Box>
 

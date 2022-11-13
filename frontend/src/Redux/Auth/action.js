@@ -30,8 +30,8 @@ export const SigninReq = (e) => (dispatch) => {
             dispatch({type: SIGNIN_SUCCESS_REQUEST,payload: {token: response.data.token, data: response.data.data}})
           })
           .catch(function (error) {
-            console.log(error)
-            dispatch({type: SIGNIN_FAILURE_REQUEST})
+            // console.log("amol",error.response.data.error)
+            dispatch({type: SIGNIN_FAILURE_REQUEST,payload:error.response.data.error})
           })
     )
 }
