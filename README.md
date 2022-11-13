@@ -25,11 +25,11 @@ We have built the exact website clone as it is on the original website.
 5. Chakra UI & CSS
 
 ## Backend
-1. MongoDB
-2.Node js
-3.Express js
-4.Mongo Atlas
-5.JavaScript
+1. MongoDB <br />
+2.Node js<br />
+3.Express js<br/>
+4.Mongo Atlas<br />
+5.JavaScript<br/>
 
 
 # Roles & Responsibilities
