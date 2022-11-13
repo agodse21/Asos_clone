@@ -11,7 +11,7 @@ const Maincartpage = () => {
   console.log("befordta",data)
   useEffect(() => {
     dispatch(getaddcartdata())
-  }, [])
+  }, [getaddcartdata])
   console.log(data)
   return (
       
