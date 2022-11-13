@@ -28,8 +28,8 @@ export const MenShoes = () => {
 console.log(products)
   useEffect(() => {
     // = (type,page,limt)
-    dispatch(loadProduct("men","shoes"));
-    // dispatch( loadProductWithQuery("women",3,12));
+    // dispatch(loadProduct("men","shoe"));
+    dispatch( loadProductWithQuery("men",6,12));
   }, [dispatch]);
 
   const handleToggle = () => setShow(!show);

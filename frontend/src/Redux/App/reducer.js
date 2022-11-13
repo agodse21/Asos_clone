@@ -5,7 +5,8 @@ const initialState={
     products:[],
     Gridproducts:[],
     product:{},
-    loading:true
+    loading:true,
+    cart:[]
 }
 
 
@@ -18,7 +19,11 @@ const reducers=(state=initialState,action)=>{
                 products:action.payload,
                 loading:false
             }
-           
+        case types.CART:
+            return {
+                ...state,
+                cart:action.payload,
+            }
         
         default:
             return state

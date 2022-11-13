@@ -28,8 +28,8 @@ export const MenGifting = () => {
 console.log(products)
   useEffect(() => {
     // = (type,page,limt)
-    // dispatch(loadProduct("women","Wowen_giftforher"));
-    dispatch( loadProductWithQuery("men",7,12));
+    dispatch(loadProduct("men",""));
+    // dispatch( loadProductWithQuery("men",7,12));
   }, [dispatch]);
 
   const handleToggle = () => setShow(!show);
