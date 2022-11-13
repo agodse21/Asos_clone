@@ -34,6 +34,25 @@ export const loadProduct = (type, cate) => {
   };
 };
 
+export const SortProduct = (type, cate) => {
+  return function (dispatch) {
+    axios
+      .get(`https://asos-backend.onrender.com/${type}product/${cate}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        // console.log("RESPONSE", res.data.data)
+        dispatch(getProduct(res.data.data));
+        // dispatch({type: "CART", payload: "earrings"})
+      })
+      .catch((er) => {
+        console.log("ERROR", er);
+      });
+  };
+};
+
 export const searchProduct=(query)=>dispatch=>{
 axios.get(`https://asos-backend.onrender.com/womenproduct/?product_name=${query}`,{
   headers: {
@@ -45,6 +64,7 @@ axios.get(`https://asos-backend.onrender.com/womenproduct/?product_name=${query}
 }).catch(e=>console.log(e))
 
 } 
+
 export const loadProductWithQuery = (type, page, limt) => {
   return function (dispatch) {
     // https://asos-backend.onrender.com/?product_name=${shs}&category=sale
