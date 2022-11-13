@@ -48,12 +48,13 @@ const Cartsingleitem = ({ el }) => {
                 <Box > <Text fontSize="20px" fontWeight="bold" >${el?.product_details?.product_price}</Text>
                   <Text as="s" color="red.300">${ Number(el?.product_details?.product_price)+100}</Text></Box>
               <Box onClick={()=>handledelete(el)}><CloseIcon/></Box></HStack>
-              <Box w="95%"> <Text fontStyle="oblique">{el?.product_details?.product_name.toUpperCase()}</Text>
+              <Box w="95%"> 
+              <Text fontStyle="oblique">{el?.product_details?.product_name}</Text>
               </Box>
                 
                   <HStack w="95%" justify="space-between">
                     <Box>
-                  <Badge borderRadius="full" px="2">{ el?.product_details?.product_color.toUpperCase()}</Badge>
+                  <Badge borderRadius="full" px="2">{ el?.product_details?.product_color}</Badge>
                      
                     </Box>
                     <Center height='40px'>

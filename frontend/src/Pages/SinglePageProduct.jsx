@@ -40,7 +40,7 @@ const SinglePageProduct = () => {
        
             getdata()
         
-    }, );
+    },[] );
     // console.log("product",products)
     const handleAddtobag=()=>{
        if(singleProduct?._id){
@@ -87,7 +87,7 @@ const SinglePageProduct = () => {
     
     return (
 
-        <Box className="Box" width={"60%"} height={"600px"}  margin={"auto"} marginTop={"5px"} padding={"10px"}> 
+        <Box className="Box" width={"80%"}   margin={"auto"} marginTop={"5px"} padding={"10px"}> 
 
         <Box className="Box" width={"60%"}   margin={"auto"} marginTop={"5px"} padding={"10px"}> 
 
@@ -281,7 +281,7 @@ const SinglePageProduct = () => {
                  
             </Box>
          </Collapse>
-        <Button size='sm' width={"15%"} fontSize={"15"} fontWeight={"bold"} marginLeft={"25rem"} onClick={handleToggle} mt='1rem'>
+        <Button size='sm' width={"15%"} fontSize={"15"} fontWeight={"bold"} marginLeft={"22rem"} onClick={handleToggle} mt='1rem'>
         Show {show ? 'Less' : 'More'}
       </Button>
 
