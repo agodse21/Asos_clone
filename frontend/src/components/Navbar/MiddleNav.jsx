@@ -143,20 +143,21 @@ export const MiddleNav = () => {
             </Box>
           </Flex>
         </Box>
+      </TabList>
+      <TabPanels>
+        <TabPanel p="0" w="100%">
+          <SubNav />
+          <BottomBanner />
+        </TabPanel>
+        <TabPanel p="0" w="100%">
 
-    
-  </TabList>
-  <TabPanels>
-    <TabPanel p="0"  w="100%">
-    <SubNav />
+        {/* <SubNav /> */}
+          <MenSubNav />
+          <BottomBanner />
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
 
-    </TabPanel>
-    <TabPanel p="0"  w="100%">
-    <MenSubNav / >
-      
-    </TabPanel>
-  </TabPanels>
-</Tabs>
 
 
   );
