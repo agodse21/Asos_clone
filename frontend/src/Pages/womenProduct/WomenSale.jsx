@@ -33,7 +33,7 @@ console.log(products)
 
   const handleToggle = () => setShow(!show);
 const HandleSort=(e)=>{
-  dispatch(loadProduct("women","sale"));
+  // dispatch(loadProduct("women","sale"));
 console.log(e.target.value)
 }
   return (
@@ -112,7 +112,7 @@ console.log(e.target.value)
       <hr />
       <Box  mb={2} bgColor="#EEEEEE">
       <SimpleGrid   w="85%" m="auto" p={2} columns={6} spacing={5}>
-      <Select onChange={(e)=>HandleSort(e)} _hover={{color:"#0770cf"}} borderTop={"1px solid black"} borderLeft="none" borderRight="none" borderRadius="0px" borderBottom={"1px solid black"}>
+      <Select  _hover={{color:"#0770cf"}} borderTop={"1px solid black"} borderLeft="none" borderRight="none" borderRadius="0px" borderBottom={"1px solid black"}>
   <option value=''>Sort</option>
  
   <option value='asc'>Price Low to high</option>
@@ -125,7 +125,7 @@ console.log(e.target.value)
   <option value='lowtohigh'>Up to 75%</option>
   <option value='hightolow'>Up to 100%</option>
 </Select>
-<Select _hover={{color:"#0770cf"}} borderTop={"1px solid black"} borderLeft="none" borderRight="none" borderRadius="0px" borderBottom={"1px solid black"}>
+<Select onChange={(e)=>HandleSort(e)} _hover={{color:"#0770cf"}} borderTop={"1px solid black"} borderLeft="none" borderRight="none" borderRadius="0px" borderBottom={"1px solid black"}>
   <option value=''>Category</option>
   <option value='shoes'>shoes</option>
   <option value='boot'>Boot</option>
