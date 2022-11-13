@@ -161,20 +161,6 @@ export const MiddleNav = () => {
     </Tabs>
 
 
-  
-  </TabList>
-  <TabPanels>
-    <TabPanel p="0"  w="100%">
-    <SubNav />
-
-    </TabPanel>
-    <TabPanel p="0"  w="100%">
-    <MenSubNav / >
-      
-    </TabPanel>
-  </TabPanels>
-</Tabs>
-
 
   );
 };
