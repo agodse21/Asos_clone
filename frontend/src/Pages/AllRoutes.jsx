@@ -41,8 +41,8 @@ export const AllRoutes = () => {
         <Route path="/signin" element={<SigninandSignup />} />
         <Route path="/womenhome" element={<h1>women</h1>} />
 
-        <Route path="/womensale" element={<WomenSale />} />
         <Route path="/womentopshop" element={<WomenTopShop />} />
+        <Route path="/womensale" element={<WomenSale />} />
         <Route path="/womenbrand" element={<WomenBrand />} />
         <Route path="/womenoutlet" element={<WomenOulet />} />
         <Route path="/womenmarketplace" element={<WomenMarketPlace />} />
