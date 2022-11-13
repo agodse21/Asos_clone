@@ -1,11 +1,14 @@
 import { SIGNIN_FAILURE_REQUEST, SIGNIN_LOODING_REQUEST, SIGNIN_SUCCESS_REQUEST, SIGNOUT_REQUEST, SIGNUP_FAILURE_REQUEST, SIGNUP_LOODING_REQUEST, SIGNUP_SUCCESS_REQUEST } from "./actionTypes"
 
+const user = JSON.parse(localStorage.getItem('userdata'))
+
 const userData = {
-    token: '',
-    isAuth: false,
+    token: "token not exisst" || user.token,
+    isAuth: user ? true : false,
     isLooding: false,
+    signup_status : false,
     isError: false,
-    u_Data: []
+    u_Data: [] || user.data
 }
 
 export function AuthReducer(state = userData,action){
@@ -15,15 +18,16 @@ export function AuthReducer(state = userData,action){
             ...state,isLooding: true
         }
         case SIGNUP_SUCCESS_REQUEST : return {
-            ...state,isLooding: false, token: payload.token, u_Data: payload.data, isAuth: true 
+            ...state,isLooding: false, signup_status: true
         }
         case SIGNUP_FAILURE_REQUEST : return {
-            ...state,isLooding: false, isError: true
+            ...state, isLooding: false, isError: true
         }
         case SIGNIN_LOODING_REQUEST : return {
             ...state,isLooding: true
         }
-        case SIGNIN_SUCCESS_REQUEST : return {
+        case SIGNIN_SUCCESS_REQUEST :
+        return {
             ...state,isLooding: false, token: payload.token, u_Data: payload.data, isAuth: true 
         }
         case SIGNIN_FAILURE_REQUEST : return {

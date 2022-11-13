@@ -1,3 +1,6 @@
+
+import Maincartpage from "../components/Addtocart/Maincartpage";
+
 import { Box } from "@chakra-ui/react";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
@@ -51,14 +54,14 @@ export const AllRoutes = () => {
         <Route path="/signup" element={<SigninandSignup />} />
         <Route path="/signin" element={<SigninandSignup />} />
 
-        <Route path="/womenhome" element={<WomenPage/>} />
+        <Route path="/womenhome" element={<WomenPage />} />
 
-        <Route path="/womenhome" element={<h1>women</h1>} />
+        <Route path="/" element={<WomenSale />} />
         {/* <Route path="/checkout" element={<CheckOut />} /> */}
         <Route path="/wishlist" element={<CheckOut />} />
 
-        <Route path="/womensale" element={<WomenSale />} />
         <Route path="/womentopshop" element={<WomenTopShop />} />
+        <Route path="/womensale" element={<WomenSale />} />
         <Route path="/womenbrand" element={<WomenBrand />} />
         <Route path="/womenoutlet" element={<WomenOulet />} />
         <Route path="/womenmarketplace" element={<WomenMarketPlace />} />
@@ -71,7 +74,7 @@ export const AllRoutes = () => {
         <Route path="/womenaccessories" element={<WomenAccessoris />} />
         <Route path="/womenautumn" element={<WomenAutumn />} />
         <Route path="/womengifting" element={<WomenGifting />} />
-        <Route path="/menhome" element={<MenPage/>} />
+        <Route path="/menhome" element={<MenPage />} />
 
         <Route path="/mensale" element={<MenSale />} />
         <Route path="/mentopshop" element={<MenTopShop />} />
@@ -87,11 +90,12 @@ export const AllRoutes = () => {
         <Route path="/menaccessories" element={<MenAccessoris />} />
         <Route path="/menautumn" element={<MenAutumn />} />
         <Route path="/mengifting" element={<MenGifting />} />
-          <Route path="/productdetails/:id" element={<SinglePageProduct/>}/>
-
-      </Routes>
-
+        <Route path="/productdetails/:id" element={<SinglePageProduct />} />
+           <Route path="/cart" element={<Maincartpage />}></Route>
+    </Routes>
+    <Footer />
       
     </Box>
+    
   );
 };
