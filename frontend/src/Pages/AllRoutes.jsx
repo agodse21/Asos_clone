@@ -55,7 +55,7 @@ export const AllRoutes = () => {
         <Route path="/signup" element={<SigninandSignup />} />
         <Route path="/signin" element={<SigninandSignup />} />
 
-        <Route path="/womenhome" element={<WomenPage/>} />
+        <Route path="/womenhome" element={<WomenPage />} />
 
         <Route path="/" element={<WomenPage />} />
         <Route path="/checkout" element={<CheckOut />} />
@@ -75,7 +75,7 @@ export const AllRoutes = () => {
         <Route path="/womenaccessories" element={<WomenAccessoris />} />
         <Route path="/womenautumn" element={<WomenAutumn />} />
         <Route path="/womengifting" element={<WomenGifting />} />
-        <Route path="/menhome" element={<MenPage/>} />
+        <Route path="/menhome" element={<MenPage />} />
 
         <Route path="/mensale" element={<MenSale />} />
         <Route path="/mentopshop" element={<MenTopShop />} />
@@ -91,13 +91,15 @@ export const AllRoutes = () => {
         <Route path="/menaccessories" element={<MenAccessoris />} />
         <Route path="/menautumn" element={<MenAutumn />} />
         <Route path="/mengifting" element={<MenGifting />} />
-          <Route path="/productdetails/:id" element={<SinglePageProduct/>}/>
+        <Route path="/productdetails/:id" element={<SinglePageProduct />} />
            <Route path="/cart" element={<Maincartpage/>}></Route>
            <Route path="/searchproduct" element={<SearchPage />}></Route>
            
       </Routes>
 <Footer />
+
       
     </Box>
+
   );
 };

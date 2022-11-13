@@ -1,12 +1,11 @@
-import { Box , HStack,VStack, Image, Text,Select, Button, Collapse, Divider} from '@chakra-ui/react'
-import React, { useEffect } from 'react';
+import { Box , HStack,VStack, Image, Text,Select, Button, Collapse} from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react';
 import { FaTag , FaClock, FaHeart, FaTruck} from "react-icons/fa";
 import { useNavigate, useParams}  from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { CART } from '../Redux/App/acttionTypes';
-import { useState } from 'react';
-import { Addtocart } from '../Redux/App/action';
+import { useDispatch } from "react-redux";
 import axios from 'axios';
+// import { CART } from '../Redux/App/acttionTypes';
+import { Addtocart } from '../Redux/App/action'
 const SinglePageProduct = () => {
     const [size,setSize]= useState("")
     const [show, setShow] =useState(false)
@@ -17,15 +16,14 @@ const SinglePageProduct = () => {
     const {id}= useParams();
     const dispatch=useDispatch();
     const navigate= useNavigate();
-    const products  = useSelector((state) => state.AppReducer.products);
-    const cart = useSelector((state) => state.AppReducer.cart);
+    // const products  = useSelector((state) => state.AppReducer.products);
+    // const cart = useSelector((state) => state.AppReducer.cart);
     console.log(id)
     let type=id.split("_")[0];  
     let  typeid = id.split("_")[1];
     const [singleProduct, setSingleProduct]= useState({})
     const [imgSrc,setImgSrc]=useState("")
-
-    var temp=[];
+    // var temp=[];
     
     // console.log(temp)
     const getdata = async () => {
@@ -42,15 +40,15 @@ const SinglePageProduct = () => {
        
             getdata()
         
-    }, [type,typeid]);
+    }, );
     // console.log("product",products)
     const handleAddtobag=()=>{
        if(singleProduct?._id){
         let price=singleProduct?.price;
-        if(singleProduct?.price[0]=="�"){
+        if(singleProduct?.price[0]==="�"){
             price=  price.split("�")[1]
         }
-        else if(singleProduct?.price[0]=="£"){
+        else if(singleProduct?.price[0]==="£"){
             price=  price.split("£")[1]
         }
         else{
@@ -88,8 +86,11 @@ const SinglePageProduct = () => {
      
     
     return (
-        // main box
+
+        <Box className="Box" width={"60%"} height={"600px"}  margin={"auto"} marginTop={"5px"} padding={"10px"}> 
+
         <Box className="Box" width={"60%"}   margin={"auto"} marginTop={"5px"} padding={"10px"}> 
+
           
           
           <HStack className="Box" width={"100%"} height={"100%"}  marginLeft={"5px"} >
@@ -284,11 +285,10 @@ const SinglePageProduct = () => {
         Show {show ? 'Less' : 'More'}
       </Button>
 
-{/*       
-      <Divider border={"2px solid green"} orientation='horizontal' /> */}
-        
+         </Box>
                    
         </Box>
+               
     )
 }
 

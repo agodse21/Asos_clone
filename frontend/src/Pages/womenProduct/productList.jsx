@@ -18,7 +18,7 @@ export const ProductList = (data) => {
             <Text  ml={2} fontWeight={"bold"} color={"#d01345"}>&pound;{price-5}.00</Text>
             </Flex>
             </Link> 
-            <Link to={`/whishlist/${data.data._id}`}>
+            <Link to={`/whishlist/women_${data.data._id}`}>
            <Flex   mt={"-25px"} mr={1} justifyContent={"right"}>
             <Flex justifyContent={"center"} borderRadius="50%" alignItems={"center"} w="40px" h={"40px"} bgColor={"white"} border={"1px solid black"} >
                 <AiOutlineHeart  size={30} />
