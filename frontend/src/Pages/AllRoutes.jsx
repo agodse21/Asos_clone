@@ -87,14 +87,11 @@ export const AllRoutes = () => {
         <Route path="/menaccessories" element={<MenAccessoris />} />
         <Route path="/menautumn" element={<MenAutumn />} />
         <Route path="/mengifting" element={<MenGifting />} />
-
-        
-
-        <Route path="/productdetails/:id" element={<SinglePageProduct/>}/>
+          <Route path="/productdetails/:id" element={<SinglePageProduct/>}/>
 
       </Routes>
 
-      <Footer/>
+      
     </Box>
   );
 };

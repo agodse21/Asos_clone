@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CART } from '../Redux/App/acttionTypes';
 import { useState } from 'react';
 import { Addtocart } from '../Redux/App/action';
+import Footer from './Footer';
 const SinglePageProduct = () => {
     const [size,setSize]= useState("")
     const [show, setShow] =useState(false)
@@ -25,7 +26,7 @@ const SinglePageProduct = () => {
           // eslint-disable-next-line react-hooks/exhaustive-deps
           temp = products?.find( product => product._id ===(typeid));
           // eslint-disable-next-line no-unused-vars
-        
+          handleAddtobag(temp)
           temp && setSingleProduct(temp);
         }
          },[products, typeid,type]);
@@ -73,6 +74,7 @@ const SinglePageProduct = () => {
     
     return (
         // main box
+        <>
         <Box className="Box" width={"60%"} height={"600px"}  margin={"auto"} marginTop={"5px"} padding={"10px"}> 
           
           
@@ -263,11 +265,11 @@ const SinglePageProduct = () => {
         Show {show ? 'Less' : 'More'}
       </Button>
 
-{/*       
-      <Divider border={"2px solid green"} orientation='horizontal' /> */}
         
                    
         </Box>
+        
+        </>
     )
 }
 
