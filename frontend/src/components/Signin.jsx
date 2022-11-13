@@ -15,7 +15,10 @@ import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { DiApple } from "react-icons/di";
 import { IoLogoFacebook } from "react-icons/io";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { SigninReq } from "../Redux/Auth/action";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Signin() {
   const [show, setShow] = useState(false);
@@ -23,12 +26,20 @@ export default function Signin() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const dispatch = useDispatch()
-
+  const navigate = useNavigate()
+  const isAuth = useSelector(e => e.AuthReducer.isAuth)
+  
   function sendSigninRequest() {
     dispatch(
-      {email,password}
+      SigninReq({email,password})
       )
-}
+    }
+
+    useEffect(()=>{
+      if(isAuth){
+        navigate('/')
+      }
+    },[isAuth])
 
   return (
     <Box style={{ fontFamily: "sans-serif" }}>

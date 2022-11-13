@@ -154,8 +154,8 @@ export const AllRoutes = () => {
         {/* <Route path="/checkout" element={<CheckOut />} /> */}
         <Route path="/wishlist" element={<CheckOut />} />
 
-        <Route path="/womensale" element={<WomenSale />} />
         <Route path="/womentopshop" element={<WomenTopShop />} />
+        <Route path="/womensale" element={<WomenSale />} />
         <Route path="/womenbrand" element={<WomenBrand />} />
         <Route path="/womenoutlet" element={<WomenOulet />} />
         <Route path="/womenmarketplace" element={<WomenMarketPlace />} />
