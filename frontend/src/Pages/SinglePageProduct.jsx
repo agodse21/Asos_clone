@@ -11,7 +11,9 @@ const SinglePageProduct = () => {
     const [size,setSize]= useState("")
     const [show, setShow] =useState(false)
     const handleToggle = () => setShow(!show)
-    const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYzNmRmNGM1MWI1OTFkOWY1NmY3MWVlNSIsImVtYWlsIjoiYW1vbEBnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJhbW9sIiwibGFzdG5hbWUiOiJnb2RzZSIsInBhc3N3b3JkIjoiJDJiJDA0JGZncm5YcC42ZS96QXhrMGt3T2w4NE9Tb3J3bkdQTzI4QVhrVXU3dU51OE1KckQ5SzVQVVZ1IiwiZG9iIjoiMjQtMy0yMDIyIiwiaW50ZXJlc3QiOiJ5ZXMiLCJfX3YiOjB9LCJpYXQiOjE2NjgxNTQxMTh9.zn0YdLwze8q1fwwCFd07YQmRGyfjLCM9rFJOHkTcrOw"
+    let userData= JSON.parse(localStorage.getItem('userdata'))||[];
+    let token=userData.token;
+    console.log(userData.token)
     const {id}= useParams();
     const dispatch=useDispatch();
     const navigate= useNavigate();
@@ -21,33 +23,27 @@ const SinglePageProduct = () => {
     let type=id.split("_")[0];  
     let  typeid = id.split("_")[1];
     const [singleProduct, setSingleProduct]= useState({})
+    const [imgSrc,setImgSrc]=useState("")
 
     var temp=[];
     
-    console.log(temp)
+    // console.log(temp)
     const getdata = async () => {
     console.log("inside getdata ",type,typeid,token)
        await axios.get(`https://asos-backend.onrender.com/${type}product/?product_id=${typeid}`, {
         headers: {
             Authorization:`Bearer ${token}`
         }
-    }).then((r)=>setSingleProduct(r.data.data[0])).catch((err)=>console.log(err))
+    }).then((r)=>{setSingleProduct(r.data.data[0])
+        setImgSrc(r.data.data[0].mainImage||r.data.data[0].mainimage)}).catch((err)=>console.log(err))
     }
 
     useEffect(()=>{
-        // if(typeid ){
-          // eslint-disable-next-line react-hooks/exhaustive-deps
-        //   temp = products?.find( product => product._id ===(typeid));
+       
             getdata()
-          // eslint-disable-next-line no-unused-vars
-        //   temp = products?.filter((el) => el._id == typeid)
-        //  setSingleProduct(singleProduct);
-        // }
-        // return () => {
-            
-        //  }
+        
     }, [type,typeid]);
-    console.log("product",products)
+    // console.log("product",products)
     const handleAddtobag=()=>{
        if(singleProduct?._id){
         let price=singleProduct?.price;
@@ -76,9 +72,10 @@ const SinglePageProduct = () => {
             item_no:1,
             size:singleProduct?.size
         };
-        console.log(size)
+        console.log(obj)
 
       dispatch( Addtocart(obj))
+      navigate("/cart")
       
        }
        else{
@@ -92,7 +89,7 @@ const SinglePageProduct = () => {
     
     return (
         // main box
-        <Box className="Box" width={"60%"} height={"600px"}  margin={"auto"} marginTop={"5px"} padding={"10px"}> 
+        <Box className="Box" width={"60%"}   margin={"auto"} marginTop={"5px"} padding={"10px"}> 
           
           
           <HStack className="Box" width={"100%"} height={"100%"}  marginLeft={"5px"} >
@@ -104,8 +101,9 @@ const SinglePageProduct = () => {
                  <Image
                     width={"80%"}
                     height={"40%"}
+                    onClick={()=>setImgSrc(singleProduct.backImage)}
                     src={singleProduct.backImage}
-                  
+                    cursor={"pointer"}
                   />
                      {/* backimage */}
                  </Box>
@@ -113,8 +111,9 @@ const SinglePageProduct = () => {
                     <Image
                      width={"80%"}
                      height={"40%"}
+                     onClick={()=>setImgSrc(singleProduct.sideImage)}
                      src={singleProduct.sideImage}
-                 
+                     cursor={"pointer"}
                     />
                     {/* sideImage */}
                  </Box>
@@ -122,8 +121,9 @@ const SinglePageProduct = () => {
                     <Image
                      width={"80%"}
                      height={"40%"}
+                     onClick={()=>setImgSrc(singleProduct.sideImage)}
                      src={singleProduct.sideImage}
-                    
+                     cursor={"pointer"}
                     />
                   
                  </Box>
@@ -132,8 +132,9 @@ const SinglePageProduct = () => {
                     <Image
                      width={"80%"}
                      height={"40%"}
+                     onClick={()=>setImgSrc(singleProduct.backImage)}
                      src={singleProduct.backImage}
-                  
+                     cursor={"pointer"}
                     />
                   
                  </Box>
@@ -145,8 +146,9 @@ const SinglePageProduct = () => {
                     <Image 
                       width={"100%"}
                       height={"100%"}
-                      margin={"auto"}
-                      src={singleProduct.mainImage}
+                      margin={"auto"} cursor={"pointer"}
+                      onClick={()=>setImgSrc(singleProduct.mainImage)}
+                      src={imgSrc}
                     />
                     </Box>
                   
@@ -229,7 +231,7 @@ const SinglePageProduct = () => {
                 </Box>
             </HStack>
             {/* product Details  */}
-            <Collapse startingHeight={20} in={show}>
+            <Collapse  startingHeight={20} in={show}>
             <Box className="Box" width={"100%"} height={"400px"}  margin={"auto"} marginTop={"15px"} padding={"10px"}>
                  <HStack className="Box" width={"100%"} height={"100%"}  marginLeft={"5px"} >
                     <Box width={"30%"}  marginLeft={"5px"}  height={"100%"}>

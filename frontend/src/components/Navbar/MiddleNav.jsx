@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RepeatClockIcon } from "@chakra-ui/icons";
 import { SearchInput } from "./SearchInput";
 import { HiOutlineUser, HiOutlineHeart } from "react-icons/hi";
@@ -29,9 +29,17 @@ import MenSubNav from "./MenSubNav";
 import { BottomBanner } from "./BottomBanner";
 import { useDispatch } from "react-redux";
 import { SwitchTab } from "../../Redux/App/action";
+import { useState } from "react";
 
 export const MiddleNav = () => {
+  const Navigate=useNavigate()
   const dispatch=useDispatch();
+  const  [userData,setData]=useState(JSON.parse(localStorage.getItem('userdata')))
+  
+  const handelSignout=()=>{
+    localStorage.removeItem("userdata");
+Navigate("/signin")
+  }
   const HandleTab=(type)=>{
     dispatch(SwitchTab(type))
   }
@@ -89,8 +97,14 @@ export const MiddleNav = () => {
                     <PopoverArrow />
                     <PopoverCloseButton />
                     <PopoverHeader bgColor={"#ddd"}>
-                      <Link to="/login">Sign In</Link>|{" "}
+                    <Box> { userData?<><Flex><Text>{userData.data.firstname}</Text>
+                      &nbsp;|&nbsp; <Text cursor={"pointer"}
+                       onClick={handelSignout}>SignOut</Text></Flex></>:
+                       <Box>
+                     <Link to="/signin"> Sign In</Link>|
                       <Link to="/signup">Join</Link>
+                      </Box>}
+                     </Box>
                     </PopoverHeader>
                     <PopoverBody>
                       <Flex
@@ -143,20 +157,21 @@ export const MiddleNav = () => {
             </Box>
           </Flex>
         </Box>
+      </TabList>
+      <TabPanels>
+        <TabPanel p="0" w="100%">
+          <SubNav />
+          <BottomBanner />
+        </TabPanel>
+        <TabPanel p="0" w="100%">
 
-    
-  </TabList>
-  <TabPanels>
-    <TabPanel p="0"  w="100%">
-    <SubNav />
+        {/* <SubNav /> */}
+          <MenSubNav />
+          <BottomBanner />
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
 
-    </TabPanel>
-    <TabPanel p="0"  w="100%">
-    <MenSubNav / >
-      
-    </TabPanel>
-  </TabPanels>
-</Tabs>
 
 
   );

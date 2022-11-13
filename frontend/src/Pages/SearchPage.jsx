@@ -20,27 +20,32 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { loadProduct } from "../../Redux/App/action";
-import { ProductList } from "./productList";
-export const WomenSale = () => {
+// import { loadProduct } from "../../Redux/App/action";
+import { ProductList } from "../Pages/womenProduct/productList";
+export const SearchPage = () => {
   const [show, setShow] = useState(false);
-  const dispatch=useDispatch();
-  const products  = useSelector((state) => state.AppReducer.products);
-console.log(products)
-  useEffect(() => {
-    dispatch(loadProduct("women","sale"));
-  }, [dispatch]);
+  const [im,setIm]=useState("");
 
+  const dispatch=useDispatch();
+  const searchProd  = useSelector((state) => state.AppReducer.searchProd);
+const searchQuery=useSelector((state) => state.AppReducer.searchQuery);
+ 
   const handleToggle = () => setShow(!show);
 const HandleSort=(e)=>{
-  dispatch(loadProduct("women","sale"));
+ 
 console.log(e.target.value)
 }
+
+useEffect(() => {
+    const timer = setTimeout(() => setIm("https://cdn.dribbble.com/users/2382015/screenshots/6065978/media/8b4662f8023e4e2295f865106b5d3aa7.gif"), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Box mb={10}>
       {
-        products.length===0 ? <Flex justifyContent={"center"}>
-        <Image  src="https://cdn.dribbble.com/users/1415337/screenshots/10781083/loadingdots2.gif" alt="x" />
+        searchProd.length===0 ? <Flex justifyContent={"center"}>
+        <Image  src={im||"https://cdn.dribbble.com/users/1415337/screenshots/10781083/loadingdots2.gif"} alt="x" />
         </Flex> :<>  <Box w="85%" m="auto" mt={3} mb={3}>
         <Breadcrumb
           spacing="8px"
@@ -51,18 +56,16 @@ console.log(e.target.value)
           </BreadcrumbItem>
 
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Women</BreadcrumbLink>
+            <BreadcrumbLink href="#">Search</BreadcrumbLink>
           </BreadcrumbItem>
 
-          <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink href="#">Sale</BreadcrumbLink>
-          </BreadcrumbItem>
+        
         </Breadcrumb>
       </Box>
       <hr />
       <Box w="85%" m="auto" mt={5}>
         <Center>
-          <Heading size={"md"}>Women's Sale</Heading>
+          <Heading size={"md"}>Showing Search Result of "{searchQuery}"</Heading>
         </Center>
         <VStack w="80%" m={"auto"} mt={4}>
           <Collapse startingHeight={20} in={show}>
@@ -196,7 +199,7 @@ console.log(e.target.value)
       
       <SimpleGrid columns={4} w="85%" m={"auto"} spacing={3} p={0}>
      {
-      products.length>0 && products.map((item)=>
+      searchProd.length>0 && searchProd.map((item)=>
       <>
         <ProductList data={item} />
         

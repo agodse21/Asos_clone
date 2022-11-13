@@ -14,11 +14,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { DiApple } from "react-icons/di";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { SignupReq } from "../Redux/Auth/action";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
   const [show, setShow] = useState(false);
@@ -30,12 +32,28 @@ export default function Signup() {
   const [dob, setDob] = useState("");
   const [interest, setInterest] = useState("Womenswear");
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  function sendSignupRequest() {
-    dispatch(
+  const status = useSelector(e => e.AuthReducer.signup_status)
+  const isError = useSelector(e => e.AuthReducer.isError)
+  const isErrorData = useSelector(e => e.AuthReducer.isErrorData)
+
+  async function sendSignupRequest() {
+    await dispatch(
     SignupReq({ email, password, firstname, lastname, dob, interest })
   )
 }
+
+useEffect(()=>{
+  if(status){
+    console.log("status",status)
+    navigate("/signin")
+    alert('Sign Up Success Now Time Login')
+    window.location.reload()
+  }else if(isError){
+    alert(isErrorData)
+  }
+},[status,isError])
 
   return (
     <Box style={{ fontFamily: "sans-serif" }}>
