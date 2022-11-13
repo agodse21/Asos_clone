@@ -40,23 +40,51 @@ import {
   } from '@chakra-ui/react';
   import {AiFillCreditCard} from "react-icons/ai"
   import {FaCcPaypal} from "react-icons/fa"
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate, useNavigation } from "react-router-dom";
 import digicImg from "../data/digicert.svg";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getaddcartdata } from "../Redux/Addtocart/action";
 export const CheckOut = () => {
     const navigate=useNavigate()
+    const [coupn,setCoupn]=useState("")
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [status,setStatus]=useState(false)
+    const [status,setStatus]=useState(false);
+    let userData= JSON.parse(localStorage.getItem('userdata'))
+    // console.log("jsjsj",)
+
+    const dispatch=useDispatch()
+  const { data, loading, error } = useSelector((state) => state.CartReducer);
+
+  useEffect(() => {
+    dispatch(getaddcartdata())
+  }, [getaddcartdata])
+  let quantity = data.reduce((prev, curr) => {
+    return prev+Number(curr.item_no)
+   },0)
+   let sum = data.reduce((prev, curr) => {
+     return prev+Number(curr.product_details.product_price)
+   },0)
+   let  totalsum;
+   totalsum = sum * quantity;
+   const HandleCoupn=()=>{
+   
+if(coupn==="FS30"){
+  totalsum=totalsum-50
+}
+   }
+
   const handlePayment=()=>{
     setStatus(true)
-
     const timer = setTimeout(() => {
         onOpen()
     //   navigate("/")
       }, 1000);
       return () => clearTimeout(timer);
   }
+
+ 
   return (
     <Box w="60%" m="auto">
       <Flex
@@ -100,12 +128,12 @@ export const CheckOut = () => {
           </Box>
           <Box p={3} boxShadow="lg" h="160px">
             <Heading size={"sm"}>PROMO/STUDENT CODE OR VOUCHERS</Heading>
-            <Input mt={5} />
-            <Button mt={5}>APPLY</Button>
+            <Input onChange={(e)=>setCoupn(e.target.value)} placeholder="coupan code" mt={5} />
+            <Button onClick={HandleCoupn} mt={5}>APPLY</Button>
           </Box>
           <Box p={5} boxShadow="lg" h="100px">
             <Heading size={"md"}>EMAIL ADDRESS</Heading>
-            <Text mt={2}>agodse9@gmail.com</Text>
+            <Text mt={2}>{userData.data.email}</Text>
           </Box>
           <Box p={5} boxShadow="lg">
             <Heading size={"md"}>DELIVERY ADDRESS</Heading>
@@ -216,26 +244,10 @@ export const CheckOut = () => {
   }}
   onLoadPaymentData={paymentRequest => {
     handlePayment()
-    console.log('load payment data', paymentRequest);
+    // console.log('load payment data', paymentRequest);
   }}
 />
-{/* <Popover>
-  <PopoverTrigger>
-  <Button  w="300px" h="50px" mt={10} colorScheme='black' variant='outline'>
-            <FaCcPaypal size={30}/> &nbsp; &nbsp; &nbsp; &nbsp; PAYPAL
-            </Button>
-  </PopoverTrigger>
-  <PopoverContent>
-    <PopoverArrow />
-    
-    <PopoverCloseButton />
-    <PopoverHeader>Confirmation!</PopoverHeader>
-    <PopoverBody>Are you sure you want to have that milkshake?
-    
 
-    </PopoverBody>
-  </PopoverContent>
-</Popover> */}
 </VStack>
 <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -281,22 +293,36 @@ export const CheckOut = () => {
 
         </Box>
 
-        <Box  p={5} boxShadow="lg"  h="380px"  w="40%">
-            <Heading mb={2} size={"md"}>0 ITEM</Heading>
+        <Box  p={5} boxShadow="lg" height={"auto"}   w="40%">
+            <Heading mb={2} size={"md"}>{data.length} ITEMS</Heading>
             <hr />
-            <Flex mt={5} mb={5}>
-            <Image  w="100px" src="https://images.asos-media.com/products/kickers-half-zip-knitted-jumper-in-retro-fairisle/203582685-1-multi?$l$" alt="x" />
+            <VStack mb={5}>
+              {data.length>0 ? data.map((item)=><><Flex mt={5} mb={5}>
+              {/* product_color
+: 
+"white"
+product_img
+: 
+"https://images.asos-media.com/products/adidas-originals-3mc-trainers-in-triple-white/10966136-1-triplewhite?$n_480w$&wid=476&fit=constrain"
+product_name
+: 
+"adidas Originals 3MC trainers in triple white"
+product_price */}
+
+            <Image  w="100px" src={item.product_details.product_img} alt="x" />
             <Box ml={5} >
-                <Text  fontWeight={"bold"}>£58.00</Text>
-                <Text>Kickers half zip knitted jumper in retro fairisle</Text>
-                <Text fontWeight={"bold"}>MULTI &nbsp; &nbsp;M </Text>
-                <Text>Qty:<b> 1</b></Text>
+                <Text  fontWeight={"bold"}>£{item.product_details.product_price}</Text>
+                <Text>{item.product_details.product_name}</Text>
+                <Text fontWeight={"bold"}>{item.product_details.product_color} &nbsp; &nbsp;M</Text>
+                {/* <Text>Qty:<b> 1</b></Text> */}
             </Box>
-            </Flex>
+            </Flex></>) :"Cart is Emapty"}
+           
+            </VStack>
             <hr />
             <Flex w="90%" m="auto" mt={5} justifyContent={"space-between"}>
                 <Text>Subtotal</Text>
-                <Text>£58.00</Text>
+                <Text>£{totalsum}</Text>
             </Flex>
             <Flex w="90%" m="auto" mt={5} justifyContent={"space-between"}>
                 <Text>Delivery</Text>
@@ -304,7 +330,7 @@ export const CheckOut = () => {
             </Flex>
             <Flex w="90%" m="auto" mt={5} justifyContent={"space-between"}>
                 <Heading size={"sm"}>TOTAL TO PAY</Heading>
-                <Heading size={"sm"}>£58.00</Heading>
+                <Heading size={"sm"}>£{totalsum}</Heading>
             </Flex>
         </Box>
       </Flex>

@@ -12,6 +12,7 @@ import {
 import {ChevronDownIcon} from "@chakra-ui/icons"
 import React, { useState } from 'react'
 import styles from "./Ordersummary.module.css"
+import { Link } from 'react-router-dom'
 const Ordersummary = ({data}) => {
 
   
@@ -48,35 +49,24 @@ const Ordersummary = ({data}) => {
         <Box>
         <Menu>
   <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-    Your Cats
+    Delivery Option
   </MenuButton>
   <MenuList>
     <MenuItem minH='48px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/100/100'
-        alt='Fluffybuns the destroyer'
-        mr='12px'
-      />
-      <span>Fluffybuns the Destroyer</span>
+      
+      <span>Free</span>
     </MenuItem>
     <MenuItem minH='40px'>
-      <Image
-        boxSize='2rem'
-        borderRadius='full'
-        src='https://placekitten.com/120/120'
-        alt='Simon the pensive'
-        mr='12px'
-      />
-      <span>Simon the pensive</span>
+     
+      <span>Standard</span>
     </MenuItem>
   </MenuList>
 </Menu>
         </Box>
         <Box>
-               <Button color="white" w="200px"bg="
+               <Link to="/checkout"><Button color="white" w="200px"bg="
 #008849">CHECKOUT</Button>
+</Link>
         </Box>
         <Box>
           <VStack>
