@@ -96,6 +96,6 @@ export const AllRoutes = () => {
     <Footer />
       
     </Box>
-    
+
   );
 };
