@@ -53,12 +53,12 @@ Navigate("/signin")
             w="90%"
             h="100%"
             m={"auto"}
-          >
-            <Box mr="20px" fontWeight={"bold"}>
-              <Link to="/womenhome">
-                <Heading size={"xl"}>Fashion World</Heading>
-              </Link>
-            </Box>
+          > <Link to="/womenhome">
+            <Box  mr="20px" fontWeight={"bold"}>
+             
+                <Text className={styles.Heading} lineHeight="22px">FASHION WORLD</Text>
+              
+            </Box></Link>
             <Tab
               borderLeft={"1px solid grey"}
               _selected={{ color: "white", bg: "#525050" }}
@@ -81,7 +81,7 @@ Navigate("/signin")
             </Tab>
           
             <SearchInput />
-            <Box ml={10}>
+            <Box ml={5}>
               <Flex alignItems={"center"}>
                 <Popover>
                   <PopoverTrigger>

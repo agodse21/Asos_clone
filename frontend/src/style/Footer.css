@@ -5,9 +5,15 @@
    gap:28px;
    justify-content: center;
 }
-.fb,.insta,.snapchat
+.insta{
+    width: 40%;
+}
+.snapchat{
+    width: 40%;
+}
+.fb
 {
-    width: 25.5%;
+    width: 40%;
     border-radius: 50%;
 }
 
