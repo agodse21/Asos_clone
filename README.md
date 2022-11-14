@@ -33,7 +33,7 @@ We have built the exact website clone as it is on the original website.
 
 
 # Roles & Responsibilities
-- The Women Landing page,Men Landing Page,Footer are designed & functioned by Mahes.
+- The Women Landing page,Men Landing Page,Footer are designed & functioned by Mahesh.
 - Login and Signup page using MongoDB are designed & functioned by Sudipta.
 - Navbar,All Product pages and Checkout page,Google Pay section are designed & functioned by Amol.
 - Product Detail page are designed by Rohit.
