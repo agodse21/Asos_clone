@@ -17,6 +17,8 @@ let token=userData.token;
 console.log(userData.token)
 export const loadProduct = (type, cate) => {
   return function (dispatch) {
+    
+    dispatch({type: "REQUEST_PRODUCT"})
     axios
       .get(`https://asos-backend.onrender.com/${type}product/${cate}`, {
         headers: {
@@ -30,12 +32,14 @@ export const loadProduct = (type, cate) => {
       })
       .catch((er) => {
         console.log("ERROR", er);
+        dispatch({type: "REQUEST_PRODUCT"})
       });
   };
 };
 
 export const SortProduct = (type, cate) => {
   return function (dispatch) {
+    dispatch({type: "REQUEST_PRODUCT"})
     axios
       .get(`https://asos-backend.onrender.com/${type}product/${cate}`, {
         headers: {
@@ -48,12 +52,14 @@ export const SortProduct = (type, cate) => {
         // dispatch({type: "CART", payload: "earrings"})
       })
       .catch((er) => {
+        dispatch({type: "REQUEST_PRODUCT"})
         console.log("ERROR", er);
       });
   };
 };
 
 export const searchProduct=(query)=>dispatch=>{
+  dispatch({type: "REQUEST_PRODUCT"})
 axios.get(`https://asos-backend.onrender.com/womenproduct/?product_name=${query}`,{
   headers: {
     Authorization: `Bearer ${token}`,
@@ -61,12 +67,14 @@ axios.get(`https://asos-backend.onrender.com/womenproduct/?product_name=${query}
 }).then((r)=>{
   console.log(r.data)
  dispatch({type: "SEARCH_ITEM", payload:{data: r.data.data,query:query}})
-}).catch(e=>console.log(e))
+}).catch((e)=>{console.log(e)
+  dispatch({type: "REQUEST_PRODUCT"})})
 
 } 
 
 export const loadProductWithQuery = (type, page, limt) => {
   return function (dispatch) {
+    dispatch({type: "REQUEST_PRODUCT"})
     // https://asos-backend.onrender.com/?product_name=${shs}&category=sale
     axios
       .get(
@@ -83,6 +91,7 @@ export const loadProductWithQuery = (type, page, limt) => {
         // dispatch({type: "CART", payload: "earrings"})
       })
       .catch((er) => {
+        dispatch({type: "REQUEST_PRODUCT"})
         console.log("ERROR", er);
       });
   };
@@ -90,6 +99,7 @@ export const loadProductWithQuery = (type, page, limt) => {
 
 export const Addtocart = (data) => (dispatch) => {
   console.log("addtocart", data);
+  dispatch({type: "REQUEST_PRODUCT"})
   axios
     .post("https://asos-backend.onrender.com/cart/addcart", data, {
       headers: {
@@ -99,6 +109,7 @@ export const Addtocart = (data) => (dispatch) => {
     .then((r) => console.log("data added"))
     .catch((err) => {
       console.log(err);
+      dispatch({type: "REQUEST_PRODUCT"})
     });
 };
 

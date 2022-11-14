@@ -27,7 +27,7 @@ export const SigninReq = (e) => (dispatch) => {
           .then(function (response) {
             // console.log({data: response.data})
             storeData_LC("userdata",response.data)
-            dispatch({type: SIGNIN_SUCCESS_REQUEST,payload: {token: response.data.token, data: response.data.data}})
+            dispatch({type: SIGNIN_SUCCESS_REQUEST,payload: {token: response.data.token, data: response.data.data,msg:"Login Successfull!"}})
           })
           .catch(function (error) {
             // console.log("amol",error.response.data.error)

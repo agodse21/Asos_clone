@@ -18,7 +18,7 @@ import { IoLogoFacebook } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { SigninReq } from "../Redux/Auth/action";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Signin() {
   const [show, setShow] = useState(false);
@@ -27,8 +27,10 @@ export default function Signin() {
   const [email, setEmail] = useState("");
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const location =useLocation();
   const isAuth = useSelector(e => e.AuthReducer.isAuth)
-  
+  const msg = useSelector(e => e.AuthReducer.msg)
+  const comingFrom=location.state?.data||"/";
   function sendSigninRequest() {
     dispatch(
       SigninReq({email,password})
@@ -38,7 +40,7 @@ export default function Signin() {
 
     useEffect(()=>{
       if(isAuth){
-        navigate('/')
+        navigate(comingFrom,{replace:true})
         window.location.reload();
       }
     },[isAuth])

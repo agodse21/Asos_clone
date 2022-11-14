@@ -1,12 +1,18 @@
-import { Badge, Box, Button, Flex, Image, Tag, Text } from '@chakra-ui/react'
+import { Badge, Box, Button, Flex, Image, Skeleton, Tag, Text } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom';
 import {AiOutlineHeart} from "react-icons/ai"
+import { useSelector } from 'react-redux';
 export const ProductList = (data) => {
     let price=data.data.price.split("�")[1];
-  
+    const loading  = useSelector((state) => state.AppReducer.loading);
   return (
-    <Box mt={5} key={data.data._id} >
+    <>
+    {
+      loading===true ? <Skeleton>
+      <div>contents wrapped</div>
+      <div>won't be visible</div>
+    </Skeleton>: <Box mt={5} key={data.data._id} >
        <Link to={`/productdetails/women_${data.data._id}`}><Tag mt={2} position="absolute" color={"red"} bgColor={"white"} borderRadius={0}>
         -{Math.floor(Math.random() * 50)}%
   </Tag>
@@ -26,5 +32,7 @@ export const ProductList = (data) => {
            </Flex>
            </Link>
     </Box>
+}
+   </>
   )
 }
