@@ -9,6 +9,7 @@ import {
   Collapse,
   Flex,
   Heading,
+  Image,
   Select,
   SimpleGrid,
   Tag,
@@ -39,6 +40,11 @@ console.log(e.target.value)
 }
   return (
     <Box mb={10}>
+       {
+        products.length===0 ? 
+        <Flex justifyContent={"center"}>
+        <Image  src="https://cdn.dribbble.com/users/1415337/screenshots/10781083/loadingdots2.gif" alt="x" />
+        </Flex> :<>
       <Box w="85%" m="auto" mt={3} mb={3}>
         <Breadcrumb
           spacing="8px"
@@ -200,6 +206,8 @@ console.log(e.target.value)
     )
      }
       </SimpleGrid>
+      </>
+}
     </Box>
   );
 };

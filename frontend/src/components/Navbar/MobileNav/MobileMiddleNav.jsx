@@ -41,11 +41,13 @@ import {
   import { GrContact } from "react-icons/gr";
   import { IoBagOutline } from "react-icons/io5";
 // import { MobileSearch } from "./MobileSearch";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { searchProduct } from "../../../Redux/App/action";
   export const MobileMiddleNav = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = useRef();
+    const { data, loading, error } = useSelector((state) => state.CartReducer);
+  
     const [userData, setData] = useState(
       JSON.parse(localStorage.getItem("userdata"))
     );
@@ -204,10 +206,14 @@ import { searchProduct } from "../../../Redux/App/action";
               <Link to="/wishlist">
                 <HiOutlineHeart size={30} style={{ marginLeft: "20px" }} />
               </Link>
-              <Link to={"/cart"}>
-                {" "}
-                <IoBagOutline size={30} style={{ marginLeft: "20px" }} />
-              </Link>
+              <Box position={"relative"} mr={3}>
+            <Link to={"/cart"}>
+                  {" "}
+                  <IoBagOutline size={30} style={{ marginLeft: "20px" }} />
+     
+                  <Text position={"absolute"} right="3" top="1.5">{data.length}</Text>
+                </Link>
+                </Box>
             </Flex>
           </Box>
         </Flex>

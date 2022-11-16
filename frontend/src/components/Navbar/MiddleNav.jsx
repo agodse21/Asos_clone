@@ -27,7 +27,7 @@ import styles from "./nav.module.css";
 import SubNav from "./WomensubMenu";
 import MenSubNav from "./MenSubNav";
 import { BottomBanner } from "./BottomBanner";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { SwitchTab } from "../../Redux/App/action";
 import { useState } from "react";
 
@@ -35,7 +35,8 @@ export const MiddleNav = () => {
   const Navigate=useNavigate()
   const dispatch=useDispatch();
   const  [userData,setData]=useState(JSON.parse(localStorage.getItem('userdata')))
-  
+  const { data, loading, error } = useSelector((state) => state.CartReducer);
+
   const handelSignout=()=>{
     localStorage.removeItem("userdata");
 Navigate("/signin")
@@ -146,13 +147,18 @@ Navigate("/signin")
                     </PopoverBody>
                   </PopoverContent>
                 </Popover>
+               
                 <Link to="/wishlist">
                   <HiOutlineHeart size={30} style={{ marginLeft: "20px" }} />
                 </Link>
+                <Box position={"relative"}>
                 <Link to={"/cart"}>
                   {" "}
                   <IoBagOutline size={30} style={{ marginLeft: "20px" }} />
+     
+                  <Text position={"absolute"} right="3" top="1.5">{data.length}</Text>
                 </Link>
+                </Box>
               </Flex>
             </Box>
           </Flex>
