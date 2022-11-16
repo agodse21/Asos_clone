@@ -25,9 +25,10 @@ export const SigninReq = (e) => (dispatch) => {
     return (
         axios.post(`https://asos-backend.onrender.com/login`,e)
           .then(function (response) {
-            // console.log({data: response.data})
+           
             storeData_LC("userdata",response.data)
-            dispatch({type: SIGNIN_SUCCESS_REQUEST,payload: {token: response.data.token, data: response.data.data,msg:"Login Successfull!"}})
+            dispatch({type: SIGNIN_SUCCESS_REQUEST,payload: {token: response.data.token, data: response.data.data}})
+  
           })
           .catch(function (error) {
             // console.log("amol",error.response.data.error)
