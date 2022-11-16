@@ -9,7 +9,8 @@ const userData = {
     signup_status : false,
     isError: false,
     isErrorData:"",
-    u_Data: [] || user.data
+    u_Data: [] || user.data,
+    msg:""
 }
 
 export function AuthReducer(state = userData,action){
@@ -29,7 +30,7 @@ export function AuthReducer(state = userData,action){
         }
         case SIGNIN_SUCCESS_REQUEST :
         return {
-            ...state,isLooding: false, token: payload.token, u_Data: payload.data, isAuth: true 
+            ...state,isLooding: false, token: payload.token, u_Data: payload.data,msg:payload.msg, isAuth: true 
         }
         case SIGNIN_FAILURE_REQUEST : return {
             ...state,isLooding: false, isError: true,isErrorData:payload

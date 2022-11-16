@@ -5,7 +5,7 @@ const initialState={
     products:[],
     Gridproducts:[],
     product:{},
-    loading:true,
+    loading:false,
     cart:[],
     searchProd:[],
     searchQuery:""
@@ -29,9 +29,14 @@ const reducers=(state=initialState,action)=>{
             case types.SEARCH_ITEM:
             return {
                 ...state,
-                searchProd:action.payload.data,searchQuery:action.payload.query
+                searchProd:action.payload.data,searchQuery:action.payload.query,loading:false
             }
-        
+            case types.REQUEST_PRODUCT:
+                return {
+                    ...state,
+                   loading:true,
+                }
+            
         default:
             return state
     }

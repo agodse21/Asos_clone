@@ -5,7 +5,7 @@ import * as types from "./actionTypes";
 let userData = JSON.parse(localStorage.getItem("userdata")) || [];
 let usertoken = userData.token;
 
-export const getaddcartdata = () => (dispatch) => {
+export const getaddcartdata = () => dispatch => {
   dispatch({ type: types.GET_CARTDATA_REQUEST });
 
   return axios

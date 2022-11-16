@@ -24,7 +24,7 @@ export const reducer = (state = initialstate, { type, payload }) => {
       return {
         ...state,
         err: true,
-        loading: false,
+        loading: true,
         data: [],
       };
     }

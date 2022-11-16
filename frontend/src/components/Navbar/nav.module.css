@@ -6,10 +6,15 @@
     display: flex;
     /* line-height: 65px; */
   }
+  .Heading{
+    font-size: 23px;
+    font-weight: bold;
+  
+  }
   .nav .wrapper {
     position: relative;
-    width: 80%;
-    padding: 0 30px;
+    /* width: 80%; */
+    /* padding: 0 30px; */
     /* height: 100%; */
     margin:  auto;
     

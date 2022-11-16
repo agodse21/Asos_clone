@@ -47,9 +47,11 @@ const Cartsingleitem = ({ el }) => {
               <HStack w="96%" justify="space-between" height="50px" marginBottom="20px">
                 <Box > <Text fontSize="20px" fontWeight="bold" >${el?.product_details?.product_price}</Text>
                   <Text as="s" color="red.300">${ Number(el?.product_details?.product_price)+100}</Text></Box>
+
               <Box onClick={()=>handledelete(el)} as="button"><CloseIcon/></Box></HStack>
               <Box w="95%"> <Text fontStyle="oblique">{el?.product_details?.product_name}</Text>
-              </Box>
+       </Box>
+           
                 
                   <HStack w="95%" justify="space-between">
                     <Box>

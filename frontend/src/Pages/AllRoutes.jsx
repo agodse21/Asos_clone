@@ -46,6 +46,7 @@ import { WomenShoes } from "./womenProduct/WomenShoes";
 import { WomenSportWear } from "./womenProduct/WomenSportwear";
 import { WomenTopShop } from "./womenProduct/WomenTopShop";
 import { SearchPage } from "./SearchPage";
+import { RequireAuth } from "../components/RequiredAuth";
 
 export const AllRoutes = () => {
   return (
@@ -58,13 +59,13 @@ export const AllRoutes = () => {
         <Route path="/womenhome" element={<WomenPage />} />
 
         <Route path="/" element={<WomenPage />} />
-        <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/checkout" element={<RequireAuth><CheckOut /></RequireAuth>} />
         {/* <Route path="/wishlist" element={<CheckOut />} /> */}
 
-        <Route path="/womentopshop" element={<WomenTopShop />} />
-        <Route path="/womensale" element={<WomenSale />} />
-        <Route path="/womenbrand" element={<WomenBrand />} />
-        <Route path="/womenoutlet" element={<WomenOulet />} />
+        <Route path="/womentopshop" element={<RequireAuth><WomenTopShop /></RequireAuth>} />
+        <Route path="/womensale" element={<RequireAuth><WomenSale /></RequireAuth>} />
+        <Route path="/womenbrand" element={<RequireAuth><WomenBrand /></RequireAuth>} />
+        <Route path="/womenoutlet" element={<RequireAuth><WomenOulet /></RequireAuth>} />
         <Route path="/womenmarketplace" element={<WomenMarketPlace />} />
         <Route path="/womenfacebody" element={<WomenFaceBody />} />
         <Route path="/womennewin" element={<WomenNewIn />} />
@@ -77,7 +78,7 @@ export const AllRoutes = () => {
         <Route path="/womengifting" element={<WomenGifting />} />
         <Route path="/menhome" element={<MenPage />} />
 
-        <Route path="/mensale" element={<MenSale />} />
+        <Route path="/mensale" element={<RequireAuth><MenSale /></RequireAuth>} />
         <Route path="/mentopshop" element={<MenTopShop />} />
         <Route path="/menbrand" element={<MenBrand />} />
         <Route path="/menoutlet" element={<MenOulet />} />
@@ -91,7 +92,7 @@ export const AllRoutes = () => {
         <Route path="/menaccessories" element={<MenAccessoris />} />
         <Route path="/menautumn" element={<MenAutumn />} />
         <Route path="/mengifting" element={<MenGifting />} />
-        <Route path="/productdetails/:id" element={<SinglePageProduct />} />
+        <Route path="/productdetails/:id" element={<RequireAuth><SinglePageProduct /></RequireAuth>} />
            <Route path="/cart" element={<Maincartpage/>}></Route>
            <Route path="/searchproduct" element={<SearchPage />}></Route>
            
