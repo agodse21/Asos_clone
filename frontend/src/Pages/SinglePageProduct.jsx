@@ -40,7 +40,7 @@ const SinglePageProduct = () => {
        
             getdata()
         
-    }, );
+    }, []);
     // console.log("product",products)
     const handleAddtobag=()=>{
        if(singleProduct?._id){

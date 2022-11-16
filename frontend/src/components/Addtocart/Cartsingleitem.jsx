@@ -44,16 +44,16 @@ const Cartsingleitem = ({ el }) => {
             </Box>
             <Box textAlign="start" w="80%">
             <VStack  w="95%" border="1 px solid red">
-              <HStack w="96%" justify="space-between" height="60px" marginBottom="20px">
+              <HStack w="96%" justify="space-between" height="50px" marginBottom="20px">
                 <Box > <Text fontSize="20px" fontWeight="bold" >${el?.product_details?.product_price}</Text>
                   <Text as="s" color="red.300">${ Number(el?.product_details?.product_price)+100}</Text></Box>
-              <Box onClick={()=>handledelete(el)}><CloseIcon/></Box></HStack>
-              <Box w="95%"> <Text fontStyle="oblique">{el?.product_details?.product_name.toUpperCase()}</Text>
+              <Box onClick={()=>handledelete(el)} as="button"><CloseIcon/></Box></HStack>
+              <Box w="95%"> <Text fontStyle="oblique">{el?.product_details?.product_name}</Text>
               </Box>
                 
                   <HStack w="95%" justify="space-between">
                     <Box>
-                  <Badge borderRadius="full" px="2">{ el?.product_details?.product_color.toUpperCase()}</Badge>
+                  <Badge borderRadius="full" px="2">{ el?.product_details?.product_color}</Badge>
                      
                     </Box>
                     <Center height='40px'>
@@ -65,7 +65,7 @@ const Cartsingleitem = ({ el }) => {
                   {
                     el.size ? ( <HStack>
                       <Text>Size</Text>
-                      <Box> <select name="size" value={state.size} onChange={handlechange}>
+                      <Box as="button"> <select name="size" value={state.size} onChange={handlechange}>
                             <option value="xs">XS</option>
                             <option value="x">S</option>
                             <option value="m">M</option>
@@ -82,7 +82,7 @@ const Cartsingleitem = ({ el }) => {
                     <Box>
                       <HStack>
                     <Text>Qty</Text>
-                        <Box>
+                        <Box as="button">
                         <select name="item_no" value={state.item_no} onChange={handlechange}>
                           <option value={1}>1</option>
                           <option value={2}>2</option>
@@ -111,6 +111,7 @@ const Cartsingleitem = ({ el }) => {
       </div>
       {
         flag ? <div>
+          <Divider orientation='horizontal'></Divider>
           <HStack justify="space-evenly" h="70px">
             <Box width="60%"></Box>
             <Button onClick={handlecancel}>Cancel</Button>

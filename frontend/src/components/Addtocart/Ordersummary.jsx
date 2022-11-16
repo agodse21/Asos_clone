@@ -68,13 +68,15 @@ const Ordersummary = ({data}) => {
     </MenuItem>
   </MenuList>
 </Menu>
-        </Box>
-        <Box w="100%" margin="auto">
+        </Box >
+          <Box w="100%">
+          <Link to="/checkout"> <Box w="90%" h="40px" borderRadius="5px"color="white" bg="
+#008849" fontWeight="bold" fontSize="20px" margin="auto" textAlign="center">CHECKOUT
            
-               <Link to="/checkout"><Button color="white" w="200px"bg="
-#008849">CHECKOUT</Button>
+           </Box>       
 </Link>
-        </Box>
+       </Box>
+       
         <Box>
           <VStack>
             <Text>WE ACCEPT</Text>
