@@ -8,6 +8,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Spinner,
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
@@ -25,29 +26,28 @@ export default function Signin() {
   const handleClick = () => setShow(!show);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const location =useLocation();
-  const isAuth = useSelector(e => e.AuthReducer.isAuth)
-  const msg = useSelector(e => e.AuthReducer.msg)
-  const comingFrom=location.state?.data||"/";
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isAuth = useSelector((e) => e.AuthReducer.isAuth);
+  const msg = useSelector((e) => e.AuthReducer.msg);
+  const isLooding= useSelector(e => e.AuthReducer.isLooding)
+  
+  const comingFrom = location.state?.data || "/";
   function sendSigninRequest() {
-    dispatch(
-      SigninReq({email,password})
+    dispatch(SigninReq({ email, password }));
+  }
 
-      )
+  useEffect(() => {
+    if (isAuth) {
+      navigate(comingFrom, { replace: true });
+      window.location.reload();
     }
-
-    useEffect(()=>{
-      if(isAuth){
-        navigate(comingFrom,{replace:true})
-        window.location.reload();
-      }
-    },[isAuth])
+  }, [isAuth]);
 
   return (
     <Box style={{ fontFamily: "sans-serif" }}>
-      <FormControl w={"65%"} margin={"auto"}>
+      <FormControl w={["95%", "75%", "65%"]} margin={"auto"}>
         <FormLabel
           color={"gray"}
           fontSize={"14px"}
@@ -87,8 +87,13 @@ export default function Signin() {
         </InputGroup>
       </FormControl>
       <Box w={"65%"} margin={"auto"} mt={"20px"}>
-        <Button onClick={sendSigninRequest} w={"100%"} bg={"#2d2d2d"} color={"white"}>
-          SIGN IN
+        <Button
+          onClick={sendSigninRequest}
+          w={"100%"}
+          bg={"#2d2d2d"}
+          color={"white"}
+        >
+          {isLooding?<Spinner />: "SIGN IN"}
         </Button>
       </Box>
       <Text textAlign={"center"} mt={"15px"}>
@@ -99,7 +104,7 @@ export default function Signin() {
       </Text>
       <Flex
         justifyContent="space-between"
-        w={"90%"}
+        w={"95%"}
         h={"60px"}
         margin={"auto"}
         mt={"40px"}
@@ -127,9 +132,10 @@ export default function Signin() {
         <Flex
           cursor={"pointer"}
           align="center"
+          p={1}
           justifyContent="space-Evenly"
           border={"1px solid gray"}
-          w={"31%"}
+          w={["36%","31%","31%","31%"]}
         >
           <IoLogoFacebook color="#3b5998" size={"25px"} />
           <Text fontWeight={600}>Facebook</Text>

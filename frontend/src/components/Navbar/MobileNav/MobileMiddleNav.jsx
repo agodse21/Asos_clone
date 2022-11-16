@@ -20,6 +20,7 @@ import {
     Tabs,
     Text,
     useDisclosure,
+    useToast,
     VStack,
   } from "@chakra-ui/react";
   import React, { useRef, useState } from "react";
@@ -39,7 +40,7 @@ import {
   import { FiShoppingBag } from "react-icons/fi";
   import { GrContact } from "react-icons/gr";
   import { IoBagOutline } from "react-icons/io5";
-import { MobileSearch } from "./MobileSearch";
+// import { MobileSearch } from "./MobileSearch";
 import { useDispatch } from "react-redux";
 import { searchProduct } from "../../../Redux/App/action";
   export const MobileMiddleNav = () => {
@@ -50,11 +51,21 @@ import { searchProduct } from "../../../Redux/App/action";
     );
     const Navigate = useNavigate();
     const [item,setItem]=useState("")
-    
+    const toast=useToast()
     const dispatch=useDispatch();
       const HandleSearch=()=>{
+        if(item===""){
+          toast({
+            title: 'Input is empty',
+            status: 'error',
+            duration: 5000,
+            position:"top",
+            isClosable: true,
+          })
+        }else{
           dispatch(searchProduct(item))
           Navigate("/searchproduct")
+        }
       }
     const handelSignout = () => {
       localStorage.removeItem("userdata");
@@ -105,10 +116,12 @@ import { searchProduct } from "../../../Redux/App/action";
                   </PopoverHeader>
                   <PopoverBody>
                   <InputGroup size='md'>
-        <Input onChange={(e)=>setItem(e.target.value)} borderRadius={"25px"} color="black"  bgColor="white" type={"text"} placeholder="Search for items and brand" />
+        <Input onChange={(e)=>setItem(e.target.value)} 
+        borderRadius={"25px"} color="black"  bgColor="white" type={"text"}
+         placeholder="Search for items and brand" />
       <InputRightElement width='4.5rem'>
        
-          <Search2Icon color={"black"} cursor={"pointer"} mr={-10} onClick={HandleSearch}/>
+          <Search2Icon color={"black"} cursor={"pointer"} mr={-5} onClick={HandleSearch}/>
       
       </InputRightElement>
     </InputGroup>
@@ -221,7 +234,7 @@ import { searchProduct } from "../../../Redux/App/action";
                     fontWeight="bold"
                   >
                     {" "}
-                    <Link to="/womenhome">Women</Link>{" "}
+                    <Link to="/womenhome" >Women</Link>{" "}
                   </Tab>
                   <Tab
                     w="40%"
@@ -229,7 +242,7 @@ import { searchProduct } from "../../../Redux/App/action";
                     borderRadius="0px"
                     fontWeight="bold"
                   >
-                    <Link to="/menhome">Men</Link>
+                    <Link to="/menhome" >Men</Link>
                   </Tab>
                 </TabList>
                 <TabPanels>
@@ -246,7 +259,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="50px"
                         w="100%"
                       >
-                        <Link to="/womenhome"> Home </Link>
+                        <Link to="/womenhome" onClick={onClose}> Home </Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -259,7 +272,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="80px"
                         w="100%"
                       >
-                        <Link to="/womendresses">
+                        <Link to="/womendresses" onClick={onClose}>
                           {" "}
                           25% OFF ALL DRESSES
                           <br />
@@ -278,7 +291,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="80px"
                         w="100%"
                       >
-                        <Link to="/womendresses"> SALE: UP TO 80% OFF</Link>
+                        <Link to="/womendresses" onClick={onClose}> SALE: UP TO 80% OFF</Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -292,7 +305,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="100px"
                         w="100%"
                       >
-                        <Link to="/womennewin"> NEW IN</Link>
+                        <Link to="/womennewin" onClick={onClose}> NEW IN</Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -306,7 +319,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="100px"
                         w="100%"
                       >
-                        <Link to="/womenclothing"> CLOTHING</Link>
+                        <Link to="/womenclothing" onClick={onClose}> CLOTHING</Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -320,7 +333,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="100px"
                         w="100%"
                       >
-                        <Link to="/womendresses"> DRESSES</Link>
+                        <Link to="/womendresses" onClick={onClose}> DRESSES</Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -334,7 +347,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="100px"
                         w="100%"
                       >
-                        <Link to="/womenshoe">SHOES</Link>
+                        <Link to="/womenshoe" onClick={onClose}>SHOES</Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -348,7 +361,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="100px"
                         w="100%"
                       >
-                        <Link to="/womensportwear">SPORTWEAR</Link>
+                        <Link to="/womensportwear" onClick={onClose}>SPORTWEAR</Link>
                       </Flex>
                     </VStack>
                   </TabPanel>
@@ -365,7 +378,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="50px"
                         w="100%"
                       >
-                        <Link to="/menhome"> Home </Link>
+                        <Link to="/menhome" onClick={onClose}> Home </Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -378,7 +391,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="80px"
                         w="100%"
                       >
-                        <Link to="/mendresses">
+                        <Link to="/mendresses" onClick={onClose}>
                           {" "}
                           25% OFF ALL DRESSES
                           <br />
@@ -397,7 +410,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="80px"
                         w="100%"
                       >
-                        <Link to="/mendresses"> SALE: UP TO 80% OFF</Link>
+                        <Link to="/mendresses" onClick={onClose}> SALE: UP TO 80% OFF</Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -411,7 +424,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="100px"
                         w="100%"
                       >
-                        <Link to="/mennewin"> NEW IN</Link>
+                        <Link to="/mennewin" onClick={onClose}> NEW IN</Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -425,7 +438,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="100px"
                         w="100%"
                       >
-                        <Link to="/menclothing"> CLOTHING</Link>
+                        <Link to="/menclothing" onClick={onClose}> CLOTHING</Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -439,7 +452,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="100px"
                         w="100%"
                       >
-                        <Link to="/mendresses"> DRESSES</Link>
+                        <Link to="/mendresses" onClick={onClose}> DRESSES</Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -453,7 +466,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="100px"
                         w="100%"
                       >
-                        <Link to="/menshoe">SHOES</Link>
+                        <Link to="/menshoe" onClick={onClose}>SHOES</Link>
                       </Flex>
                       <Flex
                         alignItems={"center"}
@@ -467,7 +480,7 @@ import { searchProduct } from "../../../Redux/App/action";
                         h="100px"
                         w="100%"
                       >
-                        <Link to="/mensportwear">SPORTWEAR</Link>
+                        <Link to="/mensportwear" onClick={onClose}>SPORTWEAR</Link>
                       </Flex>
                     </VStack>
                   </TabPanel>

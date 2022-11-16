@@ -86,22 +86,24 @@ if(coupn==="FS30"){
 
  
   return (
-    <Box w="60%" m="auto">
+    <Box w={["90%","90%","95%","70%"]}   m="auto">
       <Flex
         mb={5}
         alignItems={"center"}
+        flexDirection={["column","column","row"]}
         justifyContent={"space-between"}
         mt={"20px"}
         mr="20px"
+       
       >
         <Box>
           {" "}
           <Link to="/womenhome">
-            <Heading size={"xl"}>Fashion World</Heading>
+            <Heading className="font-face-pt" size={"xl"}>Fashion World</Heading>
           </Link>
         </Box>
         <Box>
-          <Heading color={"grey"} size={"xl"}>
+          <Heading className="font-face-pt" color={"grey"} size={"xl"}>
             CHECKOUT
           </Heading>
         </Box>
@@ -110,23 +112,25 @@ if(coupn==="FS30"){
         </Box>
       </Flex>
 
-      <Flex gap={2}>
-        <Box w="60%">
+      <Flex gap={2}  flexDirection={["column-reverse","row","row"]} >
+        <Box w={["100%","100%","60%","60%"]}>
           <Box p={5} boxShadow="lg" h="130px">
             <Heading size={"md"}>DELIVERY COUNTRY:</Heading>
-            <Flex mt={5} alignItems={"center"}>
-              <Image
+            <Flex  mt={5} alignItems={"center"} justifyContent="space-between">
+             <Flex alignItems={"center"}> <Image
                 _hover={{ border: "1px solid #0770cf", borderRadius: "50%" }}
                 cursor={"pointer"}
                 w={"40px"}
+             
                 src="https://assets.asosservices.com/storesa/images/flags/in.png"
                 alt="https://assets.asosservices.com/storesa/images/flags/in.png"
               ></Image>
               <Text ml={3}> India</Text>
-              <Button ml={"60%"}>CHANGE</Button>
+              </Flex>
+              <Button >CHANGE</Button>
             </Flex>
           </Box>
-          <Box p={3} boxShadow="lg" h="160px">
+          <Box p={3} boxShadow="lg" h="auto">
             <Heading size={"sm"}>PROMO/STUDENT CODE OR VOUCHERS</Heading>
             <Input onChange={(e)=>setCoupn(e.target.value)} placeholder="coupan code" mt={5} />
             <Button onClick={HandleCoupn} mt={5}>APPLY</Button>
@@ -253,7 +257,7 @@ if(coupn==="FS30"){
         <ModalOverlay />
         <ModalContent>
         
-          <ModalCloseButton />
+          <Link to="/"><ModalCloseButton /></Link>
           <ModalBody p={50}>
           <Alert
   status='success'
@@ -293,27 +297,18 @@ if(coupn==="FS30"){
 
         </Box>
 
-        <Box  p={5} boxShadow="lg" height={"auto"}   w="40%">
+        <Box  p={5}  boxShadow="lg" height={"auto"}  w={["100%","100%","40%","40%"]} >
             <Heading mb={2} size={"md"}>{data.length} ITEMS</Heading>
             <hr />
-            <VStack mb={5}>
-              {data.length>0 ? data.map((item)=><><Flex mt={5} mb={5}>
-              {/* product_color
-: 
-"white"
-product_img
-: 
-"https://images.asos-media.com/products/adidas-originals-3mc-trainers-in-triple-white/10966136-1-triplewhite?$n_480w$&wid=476&fit=constrain"
-product_name
-: 
-"adidas Originals 3MC trainers in triple white"
-product_price */}
+            <VStack  mb={5}>
+              {data.length>0 ? data.map((item)=><><Flex  w="95%" mb={5}>
+             
 
-            <Image  w="100px" src={item.product_details.product_img} alt="x" />
-            <Box ml={5} >
-                <Text  fontWeight={"bold"}>£{item.product_details.product_price}</Text>
+            <Image mt={5}  w={["100px"]} src={item.product_details.product_img} alt="x" />
+            <Box mt={5} ml={5} >
+                <Text  fontWeight={"bold"} color="#C53030">£{item.product_details.product_price}</Text>
                 <Text>{item.product_details.product_name}</Text>
-                <Text fontWeight={"bold"}>{item.product_details.product_color} &nbsp; &nbsp;M</Text>
+                <Text fontWeight={"bold"}> {item.product_details.product_color} &nbsp; &nbsp;M</Text>
                 {/* <Text>Qty:<b> 1</b></Text> */}
             </Box>
             </Flex></>) :"Cart is Emapty"}
@@ -322,7 +317,7 @@ product_price */}
             <hr />
             <Flex w="90%" m="auto" mt={5} justifyContent={"space-between"}>
                 <Text>Subtotal</Text>
-                <Text>£{totalsum}</Text>
+                <Text color="#C53030">£{totalsum}</Text>
             </Flex>
             <Flex w="90%" m="auto" mt={5} justifyContent={"space-between"}>
                 <Text>Delivery</Text>
@@ -330,7 +325,7 @@ product_price */}
             </Flex>
             <Flex w="90%" m="auto" mt={5} justifyContent={"space-between"}>
                 <Heading size={"sm"}>TOTAL TO PAY</Heading>
-                <Heading size={"sm"}>£{totalsum}</Heading>
+                <Heading color="#C53030" size={"sm"}>£{totalsum}</Heading>
             </Flex>
         </Box>
       </Flex>

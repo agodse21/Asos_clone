@@ -46,7 +46,7 @@ Navigate("/signin")
   return (
     <Tabs variant="unstyled">
       <TabList>
-        <Box h="60px" w="100%" bgColor={"#2d2d2d"}>
+        <Box  h="60px" w="100%" bgColor={"#2d2d2d"}>
           <Flex
             color={"white"}
             alignItems={"center"}

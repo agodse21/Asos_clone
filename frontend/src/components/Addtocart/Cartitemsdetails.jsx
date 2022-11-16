@@ -15,7 +15,7 @@ const Cartitemsdetails = ({data}) => {
   
   return (
     <div className={styles.cartitem_d_mainbox}>
-      <VStack w="100%" background="rgb(255, 255, 255)" margin="auto"  marginBottom="8px">
+      <VStack w="100%" background="rgb(255, 255, 255)"   margin="auto"  marginBottom="8px">
         <Box w="95%"   >
           <HStack   justify="space-between" w="95%" margin="auto">
            <Box w="30%"> <Text  fontWeight="bold" fontSize="20px">MY BAG</Text></Box>

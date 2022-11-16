@@ -10,10 +10,12 @@ import {
   InputRightElement,
   Radio,
   RadioGroup,
+  Spinner,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { useToast } from '@chakra-ui/react'
 import { useEffect } from "react";
 import { DiApple } from "react-icons/di";
 import { FcGoogle } from "react-icons/fc";
@@ -23,6 +25,7 @@ import { SignupReq } from "../Redux/Auth/action";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
+  const toast = useToast()
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const [password, setPassword] = useState("");
@@ -37,23 +40,50 @@ export default function Signup() {
   const status = useSelector(e => e.AuthReducer.signup_status)
   const isError = useSelector(e => e.AuthReducer.isError)
   const isErrorData = useSelector(e => e.AuthReducer.isErrorData)
-
+  const isLooding= useSelector(e => e.AuthReducer.isLooding)
+  
   async function sendSignupRequest() {
-    await dispatch(
-    SignupReq({ email, password, firstname, lastname, dob, interest })
-  )
+ 
+    if(email==="" || password==="" || firstname===""|| lastname==="" || dob==="" ){
+      toast({
+        title: 'All details must be Filled.',
+        description: "Provide all necessary Details",
+        status: 'error',
+        duration: 5000,
+        position:"top",
+        isClosable: true,
+      })
+    }else{
+      await dispatch(
+        SignupReq({ email, password, firstname, lastname, dob, interest })
+      )
+    }
+
 }
 
 useEffect(()=>{
   if(status){
     console.log("status",status)
+    
     navigate("/signin")
-    alert('Sign Up Success Now Time Login')
+    toast({
+      title: 'Sign Up Success Now Time Login',
+      status: 'success',
+      duration: 5000,
+      position:"top",
+      isClosable: true,
+    })
     window.location.reload()
   }else if(isError){
-    alert(isErrorData)
+    toast({
+      title: `Something went wrong!${isErrorData}`,
+      status: 'error',
+      duration: 5000,
+      position:"top",
+      isClosable: true,
+    })
   }
-},[status,isError])
+},[status,isError,isErrorData])
 
   return (
     <Box style={{ fontFamily: "sans-serif" }}>
@@ -116,7 +146,7 @@ useEffect(()=>{
         OR SIGN UP WITH EMAIL
       </Text>
 
-      <FormControl w={"65%"} margin={"auto"}>
+      <FormControl w={["95%", "75%", "65%"]} margin={"auto"}>
         <FormLabel
           color={"gray"}
           fontSize={"14px"}
@@ -231,7 +261,7 @@ useEffect(()=>{
           bg={"#2d2d2d"}
           color={"white"}
         >
-          JOIN ASOS
+          {isLooding?<Spinner />:"JOIN FASHION WORLD"}
         </Button>
       </Box>
     </Box>

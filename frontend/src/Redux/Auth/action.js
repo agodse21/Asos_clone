@@ -12,8 +12,9 @@ export const SignupReq = (e) => (dispatch) => {
             dispatch({type: SIGNUP_SUCCESS_REQUEST})
           })
           .catch(function (error) {
-            console.log(error)
-            dispatch({type: SIGNUP_FAILURE_REQUEST})
+            const {response}=error
+            console.log(response)
+            dispatch({type: SIGNUP_FAILURE_REQUEST,payload:"g"})
           })
     )
 }

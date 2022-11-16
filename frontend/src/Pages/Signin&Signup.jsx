@@ -19,13 +19,10 @@ export default function SigninandSignup() {
   return (
     <Box bg={"#efefef"}>
       <Box h={"80px"}></Box>
-      <Box bg={"#efefef"} w={"100%"} mb={"30px"}>
-        <Image
-          margin={"auto"}
-          src={"https://my.asos.com/Content/images/asos-logo-2022-93x28.png"}
-        />
-      </Box>
-      <Box w={"650px"} margin={"auto"} bg={"white"}>
+      <Flex justifyContent={"center"} fontWeight={"bold"}  bg={"#efefef"} w={"100%"} mb={"30px"}>
+      <Text fontSize={"35px"} fontWeight="bold" lineHeight="22px">FASHION WORLD</Text>
+      </Flex>
+      <Box w={["90%","70%","70%","45%"]} margin={"auto"} bg={"white"}>
         <Tabs defaultIndex={window.location.pathname === '/signin' ? 1 : 0}>
           <TabList w={"100%"} h={"100px"}>
             <Tab onClick={()=> navigate('/signup')} fontSize={"17px"} w={"50%"}>

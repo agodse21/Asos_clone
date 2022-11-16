@@ -7,7 +7,7 @@ const SubNav = () => {
 
   return (
     <Box w="100%" h={"50px"} bgColor={"#525050"} className={styles.nav}>
-      <Box className={styles.wrapper}>
+      <Box  className={styles.wrapper}>
         <ul className={styles.navLink}>
           <li>
             <Flex
