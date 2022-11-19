@@ -11,7 +11,7 @@ const Cartitemsdetails = ({data}) => {
   // useEffect(() => {
   //  dispatch(getaddcartdata()) 
   // }, [])
-  console.log(data)
+  
   
   return (
     <div className={styles.cartitem_d_mainbox}>

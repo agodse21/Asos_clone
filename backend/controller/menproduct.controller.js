@@ -32,7 +32,7 @@ const getProduct = async (req, res) => {
     // let value = { category };
     let value = [category, brand, name];
     let newvalue = value.filter((el) => el != null);
-    console.log(newvalue);
+ 
 
     // console.log(...value);
     if (newvalue.length > 0) {

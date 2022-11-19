@@ -25,7 +25,7 @@ export const SearchInput = () => {
       }
       
     }
-    console.log(item)
+    
   return (
     <Box ml={5} w="50%">
        

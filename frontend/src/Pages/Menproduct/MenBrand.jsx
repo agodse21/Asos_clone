@@ -36,7 +36,7 @@ export const MenBrand = () => {
   const handleToggle = () => setShow(!show);
   const HandleSort = (e) => {
     dispatch(loadProduct("women", "sale"));
-    console.log(e.target.value);
+
   };
   return (
     <Box mb={10}>

@@ -26,7 +26,7 @@ export const MenFaceBody = () => {
   const [show, setShow] = useState(false);
   const dispatch=useDispatch();
   const products  = useSelector((state) => state.AppReducer.products);
-console.log(products)
+
   useEffect(() => {
     // = (type,page,limt)
     dispatch(loadProduct("men",""));
@@ -36,7 +36,7 @@ console.log(products)
   const handleToggle = () => setShow(!show);
 const HandleSort=(e)=>{
   dispatch(loadProduct("women","sale"));
-console.log(e.target.value)
+
 }
   return (
     <Box mb={10}>

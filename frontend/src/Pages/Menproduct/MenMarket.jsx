@@ -26,7 +26,7 @@ export const MenMarketPlace = () => {
   const [show, setShow] = useState(false);
   const dispatch=useDispatch();
   const products  = useSelector((state) => state.AppReducer.products);
-console.log(products)
+
   useEffect(() => {
     // = (type,page,limt)
     // dispatch(loadProduct("women","sale"));

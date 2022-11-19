@@ -23,10 +23,9 @@ const Ordersummary = ({data}) => {
     return prev+Number(curr.product_details.product_price)
   },0)
 
- console.log(quantity,sum)
+ 
   let totalsum = sum * quantity;
-  console.log(totalsum)
-  console.log(data)
+
   return (
     <div className={styles.ordersumbox}>
     <div className={styles.ordersum_mainbox}>

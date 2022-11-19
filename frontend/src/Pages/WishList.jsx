@@ -15,7 +15,7 @@ export const WishList = () => {
   useEffect(() => {
     dispatch(getWishListdata());
   }, []);
-  console.log(WishListdata);
+
   //   console.log(loading)
   return (
     <Box>

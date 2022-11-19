@@ -33,7 +33,7 @@ const searchQuery=useSelector((state) => state.AppReducer.searchQuery);
   const handleToggle = () => setShow(!show);
 const HandleSort=(e)=>{
  
-console.log(e.target.value)
+
 }
 
 useEffect(() => {
