@@ -45,7 +45,7 @@ import { Link, useNavigate, useNavigation } from "react-router-dom";
 import digicImg from "../data/digicert.svg";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getaddcartdata } from "../Redux/Addtocart/action";
+import { CleanCart, getaddcartdata } from "../Redux/Addtocart/action";
 export const CheckOut = () => {
     const navigate=useNavigate()
     const [coupn,setCoupn]=useState("")
@@ -83,7 +83,12 @@ if(coupn==="FS30"){
       }, 1000);
       return () => clearTimeout(timer);
   }
+const ClearCart=()=>{
+ 
+  dispatch(CleanCart())
+  onClose()
 
+}
  
   return (
     <Box w={["90%","90%","95%","70%"]}   m="auto">
@@ -257,7 +262,7 @@ if(coupn==="FS30"){
         <ModalOverlay />
         <ModalContent>
         
-          <Link to="/"><ModalCloseButton /></Link>
+          <Link to="/" onClick={ClearCart}><ModalCloseButton /></Link>
           <ModalBody p={50}>
           <Alert
   status='success'
@@ -280,7 +285,7 @@ if(coupn==="FS30"){
 </Alert>
           </ModalBody>
           <ModalFooter>
-           <Link to="/womenhome"><Button colorScheme='blue' mr={3} onClick={onClose}>
+           <Link to="/womenhome" onClick={ClearCart}><Button colorScheme='blue' mr={3} >
               Close
             </Button>
             </Link> 
@@ -317,7 +322,7 @@ if(coupn==="FS30"){
             <hr />
             <Flex w="90%" m="auto" mt={5} justifyContent={"space-between"}>
                 <Text>Subtotal</Text>
-                <Text color="#C53030">£{totalsum}</Text>
+                <Text color="#C53030">£{(totalsum).toFixed(2)}</Text>
             </Flex>
             <Flex w="90%" m="auto" mt={5} justifyContent={"space-between"}>
                 <Text>Delivery</Text>
@@ -325,7 +330,7 @@ if(coupn==="FS30"){
             </Flex>
             <Flex w="90%" m="auto" mt={5} justifyContent={"space-between"}>
                 <Heading size={"sm"}>TOTAL TO PAY</Heading>
-                <Heading color="#C53030" size={"sm"}>£{totalsum}</Heading>
+                <Heading color="#C53030" size={"sm"}>£{(totalsum).toFixed(2)}</Heading>
             </Flex>
         </Box>
       </Flex>

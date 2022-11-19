@@ -30,6 +30,8 @@ import { BottomBanner } from "./BottomBanner";
 import { useDispatch, useSelector } from "react-redux";
 import { SwitchTab } from "../../Redux/App/action";
 import { useState } from "react";
+import { useEffect } from "react";
+import { getaddcartdata } from "../../Redux/Addtocart/action";
 
 export const MiddleNav = () => {
   const Navigate=useNavigate()
@@ -41,6 +43,9 @@ export const MiddleNav = () => {
     localStorage.removeItem("userdata");
 Navigate("/signin")
   }
+  useEffect(()=>{
+dispatch(getaddcartdata())
+  },[])
   const HandleTab=(type)=>{
     dispatch(SwitchTab(type))
   }
@@ -156,7 +161,7 @@ Navigate("/signin")
                   {" "}
                   <IoBagOutline size={30} style={{ marginLeft: "20px" }} />
      
-                  <Text position={"absolute"} right="3" top="1.5">{data.length}</Text>
+                  <Text position={"absolute"} right="3" top="1.5">{ data.length}</Text>
                 </Link>
                 </Box>
               </Flex>

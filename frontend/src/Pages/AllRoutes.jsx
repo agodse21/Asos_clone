@@ -47,6 +47,7 @@ import { WomenSportWear } from "./womenProduct/WomenSportwear";
 import { WomenTopShop } from "./womenProduct/WomenTopShop";
 import { SearchPage } from "./SearchPage";
 import { RequireAuth } from "../components/RequiredAuth";
+import { WishList } from "./WishList";
 
 export const AllRoutes = () => {
   return (
@@ -60,7 +61,7 @@ export const AllRoutes = () => {
 
         <Route path="/" element={<WomenPage />} />
         <Route path="/checkout" element={<RequireAuth><CheckOut /></RequireAuth>} />
-        {/* <Route path="/wishlist" element={<CheckOut />} /> */}
+        <Route path="/wishlist" element={<WishList />} />
 
         <Route path="/womentopshop" element={<RequireAuth><WomenTopShop /></RequireAuth>} />
         <Route path="/womensale" element={<RequireAuth><WomenSale /></RequireAuth>} />

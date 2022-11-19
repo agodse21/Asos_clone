@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import offer from "../MenImages/offer.png"
 import selfcare from "../MenImages/selfcare.png"
 import gofor from "../MenImages/gofor.png"
@@ -16,9 +16,16 @@ import getgift from "../Brands/getgift.png"
 import "../style/LandingPage.css";
 import { Link } from "react-router-dom";
 import{Box, Grid, GridItem, Image, Text} from "@chakra-ui/react"
+import { useDispatch } from "react-redux";
+import { getaddcartdata } from "../Redux/Addtocart/action";
 
 
 const WomenPage = () => {
+  const dispatch=useDispatch()
+  useEffect(()=>{
+    dispatch(getaddcartdata())
+      },[])
+ 
   return (
     <div>
       <br />

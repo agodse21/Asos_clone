@@ -39,7 +39,7 @@ const Ordersummary = ({data}) => {
           
           <HStack w="100%" justify="space-around">
             <Text fontWeight="bold">Sub-total</Text>
-            <Text fontWeight="bold" color="red.300">${ totalsum}</Text>
+            <Text fontWeight="bold" color="red.300">${ (totalsum).toFixed(2)}</Text>
             </HStack>
             
           </Box>

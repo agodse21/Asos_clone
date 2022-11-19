@@ -1,6 +1,7 @@
 import * as types from "./acttionTypes";
 import axios from "axios";
 import { getaddcartdata } from "../Addtocart/action";
+import { getWishListdata } from "../wishlist/action";
 
 const getProduct = (products) => ({
   type: types.GET_PRODUCT,
@@ -97,6 +98,24 @@ export const Addtocart = (data) => (dispatch) => {
     })
     .then((r) => {
       dispatch(getaddcartdata());
+    })
+    .catch((err) => {
+      console.log(err);
+      dispatch({ type: "REQUEST_PRODUCT" });
+    });
+};
+export const AddtoWishList = (data) => (dispatch) => {
+  // console.log("wishlist", data);
+  // dispatch({ type: "REQUEST_PRODUCT" });
+  axios
+    .post("https://asos-backend.onrender.com/wishlist/addwishlist", data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((r) => {
+      console.log(r)
+      dispatch(getWishListdata());
     })
     .catch((err) => {
       console.log(err);

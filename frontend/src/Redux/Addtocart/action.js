@@ -53,3 +53,14 @@ export const updatecartdata = (el, id) => (dispatch) => {
       dispatch({ type: types.UPDATE_CART_FAIL });
     });
 };
+
+export const CleanCart=()=>dispatch=>{
+  return axios
+  .delete(`https://asos-backend.onrender.com/cart/deleteall/cartdata`,{
+    headers: {
+      Authorization: `Bearer ${usertoken}`,
+    },
+  }).then((re)=>{
+    getaddcartdata()
+  })
+}
