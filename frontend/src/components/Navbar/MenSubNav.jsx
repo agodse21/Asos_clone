@@ -50,7 +50,7 @@ const MenSubNav = () => {
                       <a href="#">SALE Dresses</a>
                     </li>
                     <li>
-                      <Link to={"/"}>SALE Top</Link>
+                      <Link to={"/Asos_clone"}>SALE Top</Link>
                     </li>
                     <li>
                       <Link>SALE Shoes</Link>
@@ -81,7 +81,7 @@ const MenSubNav = () => {
                       <a href="#">SALE Shorts</a>
                     </li>
                     <li>
-                      <Link to={"/"}>SALE Tights</Link>
+                      <Link to={"/Asos_clone"}>SALE Tights</Link>
                     </li>
                     <li>
                       <Link>SALE T-shirts & Vests</Link>
@@ -126,7 +126,7 @@ const MenSubNav = () => {
                       <a href="#">Dresses under £15</a>
                     </li>
                     <li>
-                      <Link to={"/"}>Jeans under £20</Link>
+                      <Link to={"/Asos_clone"}>Jeans under £20</Link>
                     </li>
                     <li>
                       <Link>Sale: Autumn essentials</Link>

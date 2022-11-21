@@ -59,7 +59,7 @@ export const AllRoutes = () => {
 
         <Route path="/womenhome" element={<WomenPage />} />
 
-        <Route path="/" element={<WomenPage />} />
+        <Route path="/Asos_clone" element={<WomenPage />} />
         <Route path="/checkout" element={<RequireAuth><CheckOut /></RequireAuth>} />
         <Route path="/wishlist" element={<WishList />} />
 

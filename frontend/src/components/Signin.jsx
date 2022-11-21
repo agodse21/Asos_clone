@@ -33,14 +33,14 @@ export default function Signin() {
   const msg = useSelector((e) => e.AuthReducer.msg);
   const isLooding= useSelector(e => e.AuthReducer.isLooding)
   
-  const comingFrom = location.state?.data || "/";
+  const comingFrom = location.state?.data || "/Asos_clone";
   function sendSigninRequest() {
     dispatch(SigninReq({ email, password }));
   }
 
   useEffect(() => {
     if (isAuth) {
-      navigate(comingFrom, { replace: true });
+      navigate("/Asos_clone");
       window.location.reload();
     }
   }, [isAuth]);

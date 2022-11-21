@@ -79,7 +79,7 @@ if(coupn==="FS30"){
     setStatus(true)
     const timer = setTimeout(() => {
         onOpen()
-    //   navigate("/")
+    //   navigate("/Asos_clone")
       }, 1000);
       return () => clearTimeout(timer);
   }
@@ -262,7 +262,7 @@ const ClearCart=()=>{
         <ModalOverlay />
         <ModalContent>
         
-          <Link to="/" onClick={ClearCart}><ModalCloseButton /></Link>
+          <Link to="/Asos_clone" onClick={ClearCart}><ModalCloseButton /></Link>
           <ModalBody p={50}>
           <Alert
   status='success'
