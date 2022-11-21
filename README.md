@@ -72,7 +72,7 @@ ASOS is a fashion brand for the newest & trending Cloths, fashion accessories an
 - https://documenter.getpostman.com/view/23755740/2s8YmRNgUM
 
 
-## Screens ( All screens are responsive)
+## Screens ( All screens are responsive)📱
 - MenPage /WomenPage
 - Product Listing Page with all necessary data
 - Product Description Page
@@ -82,17 +82,22 @@ ASOS is a fashion brand for the newest & trending Cloths, fashion accessories an
 - Signup Page
 - Order Summary Page
 - G-pay page
+- Wishlist Page
+
 
 
 <br />
 
 
 ## 🚀 Features
-- Login and Signup User Account
+- Login and Signup user with realtime DataBase(mongodb)
+- User can see only it's activity.
 - JWT (Json Web Token) Authentication and BcryptJS Password Hashing 
-- User Can store item in cart
+- User can store item in cart
 - Cart Add and Remove Items 
 - Cart Update Quantities /Size
+- User can Store item in wishlist
+- Add item in cart from wishlist
 - Address Management
 - Order Summary
 - G-pay Payment Gateway
