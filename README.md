@@ -46,7 +46,7 @@
 
 
 
-<h3 align="center"><a href="https://agodse21.github.io/Asos_clone/"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://frontend-eight-lime.vercel.app"><strong>Want to see live preview »</strong></a></h3>
 
 ASOS is a fashion brand for the newest & trending Cloths, fashion accessories and online shop that offered high quality products at an affordable price. We have built the exact website clone as it is on the original website.
 
