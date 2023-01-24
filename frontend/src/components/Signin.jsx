@@ -10,6 +10,7 @@ import {
   InputRightElement,
   Spinner,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 // FcGoogle DiApple IoLogoFacebook
@@ -31,16 +32,35 @@ export default function Signin() {
   const location = useLocation();
   const isAuth = useSelector((e) => e.AuthReducer.isAuth);
   const msg = useSelector((e) => e.AuthReducer.msg);
-  const isLooding= useSelector(e => e.AuthReducer.isLooding)
-  
-  const comingFrom = location.state?.data || "/Asos_clone";
+  const isLooding = useSelector((e) => e.AuthReducer.isLooding);
+  const toast = useToast();
+
+  const comingFrom = location.state?.data || "/";
   function sendSigninRequest() {
-    dispatch(SigninReq({ email, password }));
+    dispatch(SigninReq({ email, password })).then((res) => {
+      if (res.type == "SIGNIN_SUCCESS_REQUEST") {
+        toast({
+          title: "Sign in Successfull!",
+          status: "success",
+          duration: 5000,
+          position: "top",
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: "Sign in failed! check details and try again. ",
+          status: "error",
+          duration: 5000,
+          position: "top",
+          isClosable: true,
+        });
+      }
+    });
   }
 
   useEffect(() => {
     if (isAuth) {
-      navigate("/Asos_clone");
+      navigate("/");
       window.location.reload();
     }
   }, [isAuth]);
@@ -93,7 +113,7 @@ export default function Signin() {
           bg={"#2d2d2d"}
           color={"white"}
         >
-          {isLooding?<Spinner />: "SIGN IN"}
+          {isLooding ? <Spinner /> : "SIGN IN"}
         </Button>
       </Box>
       <Text textAlign={"center"} mt={"15px"}>
@@ -135,7 +155,7 @@ export default function Signin() {
           p={1}
           justifyContent="space-Evenly"
           border={"1px solid gray"}
-          w={["36%","31%","31%","31%"]}
+          w={["36%", "31%", "31%", "31%"]}
         >
           <IoLogoFacebook color="#3b5998" size={"25px"} />
           <Text fontWeight={600}>Facebook</Text>

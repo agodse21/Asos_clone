@@ -58,11 +58,9 @@ export const AllRoutes = () => {
         <Route path="/signin" element={<SigninandSignup />} />
 
         <Route path="/womenhome" element={<WomenPage />} />
-
-        <Route path="/Asos_clone" element={<WomenPage />} />
+        <Route path="/" element={<WomenPage />} />
         <Route path="/checkout" element={<RequireAuth><CheckOut /></RequireAuth>} />
-        <Route path="/wishlist" element={<WishList />} />
-
+        <Route path="/wishlist" element={<RequireAuth><WishList /></RequireAuth>} />
         <Route path="/womentopshop" element={<RequireAuth><WomenTopShop /></RequireAuth>} />
         <Route path="/womensale" element={<RequireAuth><WomenSale /></RequireAuth>} />
         <Route path="/womenbrand" element={<RequireAuth><WomenBrand /></RequireAuth>} />

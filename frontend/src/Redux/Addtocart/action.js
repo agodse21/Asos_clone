@@ -15,7 +15,7 @@ export const getaddcartdata = () => dispatch => {
       },
     })
     .then((r) => {
-      console.log("amol:", r.data.data);
+     
       dispatch({ type: types.GET_CARTDATA_SUCCESS, payload: r.data.data });
     })
     .catch((err) => {
@@ -44,7 +44,7 @@ export const updatecartdata = (el, id) => (dispatch) => {
       },
     })
     .then((r) => {
-      console.log(r);
+    
       // getaddcartdata();
       dispatch({ type: types.UPDATE_CART_SUCCESS, payload: { el, id } });
     })

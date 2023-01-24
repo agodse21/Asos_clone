@@ -10,7 +10,7 @@ const Blankcart = () => {
      <IoBagOutline size={90} />
         <Text>Your bag is empty</Text>
 
-       <Link style={{color:"blue",textDecoration:"underline"}} to="/Asos_clone">Go There and buy Something</Link>
+       <Link style={{color:"blue",textDecoration:"underline"}} to="/">Go There and buy Something</Link>
       
     </VStack>
     </Center>

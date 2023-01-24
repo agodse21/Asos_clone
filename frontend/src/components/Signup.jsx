@@ -15,7 +15,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { useToast } from '@chakra-ui/react'
+import { useToast } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { DiApple } from "react-icons/di";
 import { FcGoogle } from "react-icons/fc";
@@ -25,7 +25,7 @@ import { SignupReq } from "../Redux/Auth/action";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
-  const toast = useToast()
+  const toast = useToast();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const [password, setPassword] = useState("");
@@ -34,56 +34,56 @@ export default function Signup() {
   const [lastname, setLastName] = useState("");
   const [dob, setDob] = useState("");
   const [interest, setInterest] = useState("Womenswear");
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const status = useSelector(e => e.AuthReducer.signup_status)
-  const isError = useSelector(e => e.AuthReducer.isError)
-  const isErrorData = useSelector(e => e.AuthReducer.isErrorData)
-  const isLooding= useSelector(e => e.AuthReducer.isLooding)
-  
-  async function sendSignupRequest() {
- 
-    if(email==="" || password==="" || firstname===""|| lastname==="" || dob==="" ){
+  const status = useSelector((state) => state.AuthReducer.signup_status);
+  const isError = useSelector((state) => state.AuthReducer.isError);
+  const isErrorData = useSelector((state) => state.AuthReducer.isErrorData);
+  const isLooding = useSelector((state) => state.AuthReducer.isLooding);
+
+  function sendSignupRequest() {
+    if (
+      email === "" ||
+      password === "" ||
+      firstname === "" ||
+      lastname === "" ||
+      dob === ""
+    ) {
       toast({
-        title: 'All details must be Filled.',
+        title: "All details must be Filled.",
         description: "Provide all necessary Details",
-        status: 'error',
+        status: "error",
         duration: 5000,
-        position:"top",
+        position: "top",
         isClosable: true,
-      })
-    }else{
-      await dispatch(
+      });
+    } else {
+      dispatch(
         SignupReq({ email, password, firstname, lastname, dob, interest })
-      )
+      ).then((res) => {
+        if (res.type == "SIGNUP_FAILURE_REQUEST") {
+          toast({
+            title: res.payload,
+            status: "error",
+            duration: 5000,
+            position: "top",
+            isClosable: true,
+          });
+        } else {
+          toast({
+            title: "Sign Up Success Now Time Login",
+            status: "success",
+            duration: 5000,
+            position: "top",
+            isClosable: true,
+          });
+          navigate("/signin");
+          window.location.reload();
+        }
+      });
     }
-
-}
-
-useEffect(()=>{
-  if(status){
-   
-    
-    navigate("/signin")
-    toast({
-      title: 'Sign Up Success Now Time Login',
-      status: 'success',
-      duration: 5000,
-      position:"top",
-      isClosable: true,
-    })
-    window.location.reload()
-  }else if(isError){
-    toast({
-      title: `Something went wrong!${isErrorData}`,
-      status: 'error',
-      duration: 5000,
-      position:"top",
-      isClosable: true,
-    })
   }
-},[status,isError,isErrorData])
 
   return (
     <Box style={{ fontFamily: "sans-serif" }}>
@@ -261,7 +261,7 @@ useEffect(()=>{
           bg={"#2d2d2d"}
           color={"white"}
         >
-          {isLooding?<Spinner />:"JOIN FASHION WORLD"}
+          {isLooding ? <Spinner /> : "JOIN FASHION WORLD"}
         </Button>
       </Box>
     </Box>

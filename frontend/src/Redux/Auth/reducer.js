@@ -20,10 +20,10 @@ export function AuthReducer(state = userData,action){
             ...state,isLooding: true
         }
         case SIGNUP_SUCCESS_REQUEST : return {
-            ...state,isLooding: false, signup_status: true
+            ...state,isLooding: false, signup_status: true,msg:payload
         }
         case SIGNUP_FAILURE_REQUEST : return {
-            ...state, isLooding: false, isError: true,isErrorData:payload
+            ...state, isLooding: false, isError: true,isErrorData:payload,signup_status:false
         }
         case SIGNIN_LOODING_REQUEST : return {
             ...state,isLooding: true

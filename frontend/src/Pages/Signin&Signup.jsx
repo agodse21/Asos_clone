@@ -12,9 +12,11 @@ import {
 import React from "react";
 import Signin from "../components/Signin";
 import Signup from "../components/Signup";
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 export default function SigninandSignup() {
+  const location=useLocation()
+  // console.log(location.pathname)
   const navigate = useNavigate()
   return (
     <Box bg={"#efefef"}>
@@ -23,7 +25,7 @@ export default function SigninandSignup() {
       <Text fontSize={"35px"} fontWeight="bold" lineHeight="22px">FASHION WORLD</Text>
       </Flex>
       <Box w={["90%","70%","70%","45%"]} margin={"auto"} bg={"white"}>
-        <Tabs defaultIndex={window.location.pathname === '/signin' ? 1 : 0}>
+        <Tabs defaultIndex={location.pathname === '/signin' ? 1 : 0}>
           <TabList w={"100%"} h={"100px"}>
             <Tab onClick={()=> navigate('/signup')} fontSize={"17px"} w={"50%"}>
               JOIN

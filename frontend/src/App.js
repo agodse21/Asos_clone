@@ -11,11 +11,8 @@ function App() {
   return (
     <>
     <Box className="font-face-pt ">
-
-    
      <AllRoutes />
-     
-    </Box>
+     </Box>
     </>
   );
 }
