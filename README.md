@@ -60,7 +60,7 @@ ASOS is a fashion brand for the newest & trending Cloths, fashion accessories an
   - **[Sudipta ](https://github.com/sudiptadip)** 
   - **[Rohit Kumar](https://github.com/rk6093720)** 
   - **[Mahesh Raut](https://github.com/Rautmahi)** 
-  - 
+    
 # Roles & Responsibilities
 - The Women Landing page,Men Landing Page,Footer are designed & functioned by Mahesh.
 - Login and Signup page using MongoDB are designed & functioned by Sudipta.
