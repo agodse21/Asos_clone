@@ -64,7 +64,7 @@ ASOS is a fashion brand for the newest & trending Cloths, fashion accessories an
 # Roles & Responsibilities
 - The Women Landing page,Men Landing Page,Footer are designed & functioned by Mahesh.
 - Login and Signup page using MongoDB are designed & functioned by Sudipta.
-- Navbar,All Product pages and Checkout page,Google Pay section are designed & functioned by Amol.
+- Navbar,All Product pages and Checkout page,Google Pay section are designed & functioned by **[Amol](https://github.com/agodse21)** .
 - Product Detail page are designed by Rohit.
 - Cart page,Backend Or Backend API are designed by Abhishek.
 
